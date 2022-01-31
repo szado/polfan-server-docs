@@ -41,7 +41,11 @@ Token prześlij w nagłówku `Authorization: Bearer token_dostępowy`.
 
 ### Komunikacja
 
-Żądanie kieruj na adres: `https://s2.polfan.pl/api`. W jego ciele prześlij [poprawną komendę](protocol.md). W odpowiedzi możesz otrzymać:
+Żądanie kieruj na adres: 
+
+`https://s2.polfan.pl/api`
+
+W jego ciele prześlij [poprawną komendę](protocol.md). W odpowiedzi możesz otrzymać:
 
 | Kod HTTP | Zawartość                                                                                                                                                                                         |
 |----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -72,6 +76,8 @@ Użyj połączenia websocket gdy:
 
 ### Uwierzytelnianie i komunikacja
 
-Token prześlij w parametrze `token` przy nawiązywaniu połączenia z serwerem: `wss://s2.polfan.pl/ws?token=token_dostępowy`.
+Token prześlij w parametrze `token` przy nawiązywaniu połączenia z serwerem: 
+
+`wss://s2.polfan.pl/ws?token=token_dostępowy`
 
 Po prawidłowym uwierzytelnieniu serwer wykona inicjalizację połączenia (tzw. handshake) i wyśle wiadomość powitalną `Welcome` zawierającą stan sesji użytkownika.
