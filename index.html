@@ -12,11 +12,15 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '',
-      repo: ''
+      name: 'PolfanServer v3 API',
+      repo: '',
+      plugins: [
+        EditOnGithubPlugin.create('https://github.com/szado/polfan-server-docs/blob/master/', null, 'Edytuj na GitHubie')
+      ]
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
 </body>
 </html>
