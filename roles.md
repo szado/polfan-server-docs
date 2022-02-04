@@ -6,7 +6,7 @@ Rola jest podzbiorem użytkowników w przestrzeni mogącym przypisywać im upraw
 
 Komenda `CreateRole` umożliwia utworzenie nowej roli w przestrzeni.
 
-W przypadku powodzenia, wszyscy członkowie przestrzeni otrzymają zdarzenie `NewRole`.
+W przypadku powodzenia wszyscy członkowie przestrzeni otrzymają zdarzenie `NewRole`.
 
 W przypadku błędu serwer wyśle odpowiedź `Error`.
 
@@ -19,6 +19,29 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 | `id`        | `UUID`          | wygenerowany przez klienta identyfikator nowej roli |
 | `spaceId`   | `UUID`          | ID przestrzeni                                      |
 | `basicData` | `RoleBasicData` | podstawowe informacje o roli                        |
+
+### `NewRole`
+
+Zdarzenie informujące o utworzeniu nowej roli w przestrzeni.
+
+| Pole      | Typ                     | Opis           |
+|-----------|-------------------------|----------------|
+| `spaceId` | `UUID`                  | ID przestrzeni |
+| `role`    | [`Role`](roles.md#role) | nowy temat     |
+
+#### `Role`
+
+| Pole        | Typ                                       | Opis                 |
+|-------------|-------------------------------------------|----------------------|
+| `id`        | `UUID`                                    | ID roli              |
+| `basicData` | [`RoleBasicData`](roles.md#rolebasicdata) | podstawowe dane roli |
+
+#### `RoleBasicData`
+
+| Pole    | Typ                  | Opis       |
+|---------|----------------------|------------|
+| `name`  | `string`             | nazwa roli |
+| `color` | `string`&#124;`null` | kolor roli |
 
 ### Możliwe kody błędów w `Error`
 

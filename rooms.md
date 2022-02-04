@@ -6,7 +6,7 @@ Pokój jest podzbiorem użytkowników i powiązanych ustawień w przestrzeni. Za
 
 Komenda `JoinRoom` umożliwia wejście do pokoju. 
 
-W przypadku powodzenia, klient dołączający otrzyma zdarzenie `RoomJoined`, natomiast użytkownicy będący już w pokoju`RoomMemberJoined`.
+W przypadku powodzenia klient dołączający otrzyma zdarzenie `RoomJoined`, natomiast użytkownicy będący już w pokoju`RoomMemberJoined`.
 
 W przypadku błędu serwer wyśle odpowiedź `Error`.
 
@@ -26,13 +26,36 @@ Zdarzenie potwierdzające wejście do pokoju.
 |--------|--------|-----------------------------------------------------|
 | `room` | `Room` | informacje o pokoju do którego nastąpiło dołączenie |
 
+#### `Room`
+
+| Pole        | Typ                                       | Opis                                  |
+|-------------|-------------------------------------------|---------------------------------------|
+| `id`        | `UUID`                                    | ID pokoju                             |
+| `spaceId`   | `UUID`                                    | ID przestrzeni do której należy pokój |
+| `basicData` | [`RoomBasicData`](rooms.md#roombasicdata) | podstawowe informacje o pokoju        |
+| `topics`    | [`Topic[]`](topics.md#topic)              | lista tematów w pokoju                |
+| `members`   | [`RoomMember[]`](rooms.md#roommember)     | lista użytkowników w pokoju           |
+
+#### `RoomBasicData`
+
+| Pole          | Typ      | Opis         |
+|---------------|----------|--------------|
+| `name`        | `string` | nazwa pokoju |
+| `description` | `string` | opis pokoju  |
+
+#### `RoomMember`
+
+| Pole          | Typ      | Opis                                                                         |
+|---------------|----------|------------------------------------------------------------------------------|
+| `userId`      | `string` | ID użytkownika (nawiązujący do [członka przestrzeni](spaces.md#spacemember)) |
+
 ### `RoomMemberJoined`
 
 Zdarzenie informujące o dołączeniu nowego członka do pokoju.
 
-| Pole     | Typ          | Opis                       |
-|----------|--------------|----------------------------|
-| `member` | `RoomMember` | informacje o nowym członku |
+| Pole     | Typ                                 | Opis                       |
+|----------|-------------------------------------|----------------------------|
+| `member` | [`RoomMember`](rooms.md#roommember) | informacje o nowym członku |
 
 ### Możliwe kody błędów w `Error`
 
@@ -97,11 +120,26 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 Żądanie utworzenia nowego pokoju.
 
-| Pole        | Typ             | Opis                                            |
-|-------------|-----------------|-------------------------------------------------|
-| `id`        | `UUID`          | wygenerowany przez klienta identyfikator pokoju |
-| `spaceId`   | `UUID`          | ID przestrzeni w której ma być utworzony pokój  |
-| `basicData` | `RoomBasicData` | podstawowe informacje od przestrzeni            |
+| Pole        | Typ                                       | Opis                                            |
+|-------------|-------------------------------------------|-------------------------------------------------|
+| `id`        | `UUID`                                    | wygenerowany przez klienta identyfikator pokoju |
+| `spaceId`   | `UUID`                                    | ID przestrzeni w której ma być utworzony pokój  |
+| `basicData` | [`RoomBasicData`](rooms.md#roombasicdata) | podstawowe informacje od przestrzeni            |
+
+### `NewRoom`
+
+Zdarzenie informujące o utworzeniu nowego pokoju w przestrzeni.
+
+| Pole      | Typ                                   | Opis                                            |
+|-----------|---------------------------------------|-------------------------------------------------|
+| `summary` | [`RoomSummary`](rooms.md#roomsummary) | wygenerowany przez klienta identyfikator pokoju |
+
+#### `RoomSummary`
+
+| Pole        | Typ                                       | Opis                   |
+|-------------|-------------------------------------------|------------------------|
+| `id`        | `UUID`                                    | ID pokoju              |
+| `basicData` | [`RoomBasicData`](rooms.md#roombasicdata) | podstawowe dane pokoju |
 
 ### Możliwe kody błędów w `Error`
 

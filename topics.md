@@ -41,11 +41,34 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 Żądanie utworzenia nowego tematu.
 
-| Pole        | Typ              | Opis                                            |
-|-------------|------------------|-------------------------------------------------|
-| `id`        | `UUID`           | wygenerowany przez klienta identyfikator tematu |
-| `roomId`    | `UUID`           | ID pokoju w którym ma być utworzony temat       |
-| `basicData` | `TopicBasicData` | podstawowe informacje o temacie                 |
+| Pole        | Typ                                          | Opis                                            |
+|-------------|----------------------------------------------|-------------------------------------------------|
+| `id`        | `UUID`                                       | wygenerowany przez klienta identyfikator tematu |
+| `roomId`    | `UUID`                                       | ID pokoju w którym ma być utworzony temat       |
+| `basicData` | [`TopicBasicData`](topics.md#topicbasicdata) | podstawowe informacje o temacie                 |
+
+### `NewTopic`
+
+Zdarzenie informujące o utworzeniu nowego tematu w pokoju.
+
+| Pole     | Typ                        | Opis       |
+|----------|----------------------------|------------|
+| `roomId` | `UUID`                     | ID pokoju  |
+| `topic`  | [`Topic`](topics.md#topic) | nowy temat |
+
+#### `Topic`
+
+| Pole        | Typ                                          | Opis                                  |
+|-------------|----------------------------------------------|---------------------------------------|
+| `id`        | `UUID`                                       | ID pokoju                             |
+| `basicData` | [`TopicBasicData`](topics.md#topicbasicdata) | podstawowe informacje o pokoju        |
+
+#### `TopicBasicData`
+
+| Pole          | Typ      | Opis         |
+|---------------|----------|--------------|
+| `name`        | `string` | nazwa tematu |
+| `description` | `string` | opis tematu  |
 
 ### Możliwe kody błędów w `Error`
 

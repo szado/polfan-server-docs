@@ -4,11 +4,7 @@ Uprawnienie identyfikowane jest za pomocą unikalnej nazwy. Jego wartość okre�
 
 ## Obliczanie wartości uprawnień
 
-Obliczanie to proces podczas którego ustalana jest ostateczna wartość uprawnienia dla użytkownika w określonym kontekście (wynik obliczeń). 
-
-Uprawnienie może przyjmować jedną z dwóch wartości:
-- `zezwolenie`,
-- `zabronienie`.
+Obliczanie to proces podczas którego ustalana jest ostateczna wartość uprawnienia dla użytkownika w określonym kontekście (wynik obliczeń).
 
 ###  Warstwy
 
@@ -54,12 +50,20 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 Żądanie ustawienia listy uprawnień dla roli.
 
-| Pole          | Typ                                    | Opis                                                                |
-|---------------|----------------------------------------|---------------------------------------------------------------------|
-| `roleId`      | `UUID`                                 | ID roli                                                             |
-| `layer`       | `"Space"`&#124;`"Room"`&#124;`"Topic"` | warstwa dla której chcemy zdefiniować uprawnienia                   |
-| `layerId`     | `integer`                              | ID warstwy (przestrzeni, pokoju lub tematu)                         |
-| `permissions` | `Permission[]`                         | tablica uprawnień (te wartości **nadpiszą istniejące uprawnienia**) |
+| Pole          | Typ                                         | Opis                                                                |
+|---------------|---------------------------------------------|---------------------------------------------------------------------|
+| `roleId`      | `UUID`                                      | ID roli                                                             |
+| `layer`       | `"Space"`&#124;`"Room"`&#124;`"Topic"`      | warstwa dla której chcemy zdefiniować uprawnienia                   |
+| `layerId`     | `integer`                                   | ID warstwy (przestrzeni, pokoju lub tematu)                         |
+| `permissions` | [`Permission[]`](permissions.md#permission) | tablica uprawnień (te wartości **nadpiszą istniejące uprawnienia**) |
+
+#### `Permission`
+
+| Pole    | Typ       | Opis                                                           |
+|---------|-----------|----------------------------------------------------------------|
+| `name`  | `string`  | nazwa uprawnienia                                              |
+| `value` | `boolean` | wartość uprawnienia (prawda - dostęp lub fałsz - brak dostępu) |
+| `skip`  | `boolean` | [flaga skip](permissions.md#flaga-skip)                        |
 
 ### Możliwe kody błędów w `Error`
 
@@ -76,7 +80,7 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 Komenda `GetRolePermissions` umożliwia pobranie wartości uprawnień dla roli z [warstwy 2., 4. i 6](permissions.md#warstwy).
 
-W przypadku powodzenia, klient otrzyma odpowiedź `Permissions`.
+W przypadku powodzenia klient otrzyma odpowiedź `Permissions`.
 
 W przypadku błędu serwer wyśle odpowiedź `Error`.
 
@@ -90,6 +94,12 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 | `layer`   | `"Space"`&#124;`"Room"`&#124;`"Topic"` | warstwa dla której chcemy pobrać uprawnienia                             |
 | `layerId` | `integer`                              | ID warstwy (przestrzeni, pokoju lub tematu)                              |
 | `names`   | `string[]`&#124;`null`                 | tablica nazw uprawnień do pobrania, domyślnie zwrócone zostaną wszystkie |
+
+### `Permissions`
+
+| Pole          | Typ                                         | Opis            |
+|---------------|---------------------------------------------|-----------------|
+| `permissions` | [`Permission[]`](permissions.md#permission) | lista uprawnień |
 
 ### Możliwe kody błędów w `Error`
 
@@ -106,7 +116,7 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 Komenda `SetMemberPermissions` umożliwia definicję wartości uprawnień dla użytkownika w [warstwie 1., 3., 5. i 7](permissions.md#warstwy).
 
-W przypadku powodzenia, klient otrzyma odpowiedź `Ok`.
+W przypadku powodzenia klient otrzyma odpowiedź `Ok`.
 
 W przypadku błędu serwer wyśle odpowiedź `Error`.
 
@@ -119,7 +129,7 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 | `userId`      | `string`                                               | ID użytkownika                                                                         |
 | `layer`       | `"Global"`&#124;`"Space"`&#124;`"Room"`&#124;`"Topic"` | warstwa dla której chcemy zdefiniować uprawnienia                                      |
 | `layerId`     | `integer`&#124;`null`                                  | ID warstwy (przestrzeni, pokoju lub tematu). Przypisz `null` jeśli warstwa to `Global` |
-| `permissions` | `Permission[]`                                         | tablica uprawnień (te wartości **nadpiszą istniejące uprawnienia**)                    |
+| `permissions` | [`Permission[]`](permissions.md#permission)            | tablica uprawnień (te wartości **nadpiszą istniejące uprawnienia**)                    |
 
 ### Możliwe kody błędów w `Error`
 
@@ -136,7 +146,7 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 Komenda `GetMemberPermissions` umożliwia pobranie wartości uprawnień dla roli z [warstwy 1., 3., 5. i 7](permissions.md#warstwy).
 
-W przypadku powodzenia klient otrzyma odpowiedź `Permissions`.
+W przypadku powodzenia klient otrzyma odpowiedź [`Permissions`](permissions.md#permissions).
 
 W przypadku błędu serwer wyśle odpowiedź `Error`.
 
@@ -166,7 +176,7 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 Komenda `GetComputedPermissions` umożliwia pobranie obliczonych uprawnień dla aktualnego użytkownika.
 
-W przypadku powodzenia, klient otrzyma odpowiedź `Permissions`.
+W przypadku powodzenia klient otrzyma odpowiedź `Permissions`.
 
 W przypadku błędu serwer wyśle odpowiedź `Error`.
 

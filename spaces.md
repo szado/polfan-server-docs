@@ -22,21 +22,48 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 Zdarzenie potwierdzające wejście do przestrzeni.
 
-| Pole            | Typ              | Opis                                        |
-|-----------------|------------------|---------------------------------------------|
-| `id`            | `UUID`           | identyfikator przestrzeni                   |
-| `basicData`     | `SpaceBasicData` | podstawowe dane przestrzeni                 |
-| `roles`         | `Role[]`         | tablica ról                                 |
-| `members`       | `SpaceMember[]`  | tablica użytkowników obecnych w przestrzeni |
-| `roomSummaries` | `RoomSummary[]`  | uproszczona lista pokojów w przestrzeni     |
+| Pole            | Typ                                          | Opis                                        |
+|-----------------|----------------------------------------------|---------------------------------------------|
+| `id`            | `UUID`                                       | identyfikator przestrzeni                   |
+| `basicData`     | [`SpaceBasicData`](spaces.md#spacebasicdata) | podstawowe dane przestrzeni                 |
+| `roles`         | [`Role[]`](roles.md#role)                    | tablica zdefiniowanych ról                  |
+| `members`       | [`SpaceMember[]`](spaces.md#spacemember)     | tablica użytkowników obecnych w przestrzeni |
+| `roomSummaries` | [`RoomSummary[]`](rooms.md#roomsummary)      | uproszczona lista pokojów w przestrzeni     |
+
+#### `SpaceBasicData`
+
+| Pole   | Typ             | Opis              |
+|--------|-----------------|-------------------|
+| `name` | `string`        | nazwa przestrzeni |
+
+#### `SpaceMember`
+
+| Pole            | Typ                      | Opis                        |
+|-----------------|--------------------------|-----------------------------|
+| `user`          | [`User`](spaces.md#user) | obiekt z danymi użytkownika |
+| `roles`         | `string[]`               | tablica ID ról              |
+
+#### `User`
+
+| Pole            | Typ                                        | Opis                                        |
+|-----------------|--------------------------------------------|---------------------------------------------|
+| `id`            | `string`                                   | identyfikator użytkownika                   |
+| `basicData`     | [`UserBasicData`](spaces.md#userbasicdata) | podstawowe dane użytkownika                 |
+
+#### `UserBasicData`
+
+| Pole     | Typ      | Opis              |
+|----------|----------|-------------------|
+| `nick`   | `string` | nazwa użytkownika |
+| `avatar` | `string` | awatar            |
 
 ### `SpaceMemberJoined`
 
 Zdarzenie informujące o dołączeniu nowego członka do przestrzeni.
 
-| Pole     | Typ           | Opis                       |
-|----------|---------------|----------------------------|
-| `member` | `SpaceMember` | informacje o nowym członku |
+| Pole     | Typ                                    | Opis                       |
+|----------|----------------------------------------|----------------------------|
+| `member` | [`SpaceMember`](spaces.md#spacemember) | informacje o nowym członku |
 
 ### Możliwe kody błędów w `Error`
 
@@ -51,7 +78,7 @@ Zdarzenie informujące o dołączeniu nowego członka do przestrzeni.
 
 Komenda `LeaveSpace` umożliwia opuszczenie przestrzeni. 
 
-W przypadku powodzenia, klient dołączający otrzyma zdarzenie `SpaceLeft`, natomiast pozostali użytkownicy w przestrzeni `SpaceMemberLeft`.
+W przypadku powodzenia klient dołączający otrzyma zdarzenie `SpaceLeft`, natomiast pozostali użytkownicy w przestrzeni `SpaceMemberLeft`.
 
 W przypadku błędu serwer wyśle odpowiedź `Error`.
 
@@ -100,10 +127,10 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 Żądanie utworzenia nowej przestrzeni.
 
-| Pole        | Typ              | Opis                                                 |
-|-------------|------------------|------------------------------------------------------|
-| `id`        | `UUID`           | wygenerowany przez klienta identyfikator przestrzeni |
-| `basicData` | `SpaceBasicData` | podstawowe informacje od przestrzeni                 |
+| Pole        | Typ                                          | Opis                                                 |
+|-------------|----------------------------------------------|------------------------------------------------------|
+| `id`        | `UUID`                                       | wygenerowany przez klienta identyfikator przestrzeni |
+| `basicData` | [`SpaceBasicData`](spaces.md#spacebasicdata) | podstawowe informacje o  przestrzeni                 |
 
 ### Możliwe kody błędów w `Error`
 
