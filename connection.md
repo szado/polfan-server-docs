@@ -91,3 +91,88 @@ Token prześlij w parametrze `token` przy nawiązywaniu połączenia z serwerem:
 `wss://s2.polfan.pl/ws?token=token_dostępowy`
 
 Po prawidłowym uwierzytelnieniu serwer wykona inicjalizację połączenia (tzw. handshake) i wyśle wiadomość powitalną `Welcome` zawierającą stan sesji użytkownika.
+
+#### `Welcome`
+
+Zdarzenie zawierające pełną informację o stanie sesji na moment nawiązania połączenia. Wszelkie zdarzenia występujące od tej chwili będą modyfikować ten stan.
+
+| Pole      | Typ                                | Opis                                  |
+|-----------|------------------------------------|---------------------------------------|
+| `session` | [`Session`](connection.md#session) | obiekt zawierający informacje o sesji |
+
+#### `Session`
+
+| Pole            | Typ                                            | Opis                                               |
+|-----------------|------------------------------------------------|----------------------------------------------------|
+| `serverVersion` | `string`                                       | wersja serwera z którym nastąpiło połączenie       |
+| `global`        | [`GlobalConfig[]`](connection.md#globalconfig) | ustawienia globalne serwera                        |
+| `spaces`        | [`Space[]`](spaces.md#space)                   | lista przestrzeni w których obecny jest użytkownik |
+| `rooms`         | [`Room[]`](rooms.md#room)                      | lista pokojów w których obecny jest użytkownik     |
+
+#### `GlobalConfig`
+
+| Pole      | Typ                     | Opis                                  |
+|-----------|-------------------------|---------------------------------------|
+
+#### Przykład zdarzenia `Welcome`
+
+```json
+{
+  "_": {
+    "type": "Welcome"
+  },
+  "serverVersion": "PolfanServer/0.0.1",
+  "global": {},
+  "spaces": [
+    {
+      "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
+      "basicData": {
+        "name": "Hogwart"
+      },
+      "roles": [
+        {
+          "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
+          "basicData": {
+            "name": "Gryffindor",
+            "color": "#ff0000"
+          }
+        }
+      ],
+      "members": [
+        {
+          "user": {
+            "id": "1002",
+            "basicData": {
+              "nick": "Harry Potter",
+              "avatar": ""
+            }
+          }, 
+          "roles": ["252e63a0-10cf-4856-bdcb-db2b2aadedd2"]
+        }
+      ]
+    }
+  ],
+  "rooms": [
+    {
+      "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
+      "spaceId": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
+      "basicData": {
+        "name": "Zamek",
+        "description": ""
+      },
+      "topics": {
+        "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
+        "basicData": {
+          "name": "Wielka sala",
+          "description": ""
+        }
+      },
+      "members": [
+        {
+          "userId": "1002"
+        }
+      ]
+    }
+  ]
+}
+```

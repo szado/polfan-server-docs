@@ -22,6 +22,12 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 Zdarzenie potwierdzające wejście do przestrzeni.
 
+| Pole    | Typ                        | Opis                      |
+|---------|----------------------------|---------------------------|
+| `space` | [`Space`](spaces.md#space) | identyfikator przestrzeni |
+
+#### `Space`
+
 | Pole            | Typ                                          | Opis                                        |
 |-----------------|----------------------------------------------|---------------------------------------------|
 | `id`            | `UUID`                                       | identyfikator przestrzeni                   |
