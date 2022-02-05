@@ -1,5 +1,13 @@
 # Połączenie
 
+![Schemat](img/connection-arch.png)
+
+**Serwer** — usługa czatu.
+
+**Użytkownik/bot** — fizyczna osoba lub usługa mająca przypisane pojedyncze konto, identyfikująca się loginem i hasłem.
+
+**Klient** — oprogramowanie nawiązujące połączenie z serwerem, reprezentujące użytkownika, identyfikowane za pomocą tokena.
+
 ## Token dostępowy
 
 Aby nawiązać połączenie z serwerem, potrzebujesz tokena dostępowego. Uzyskasz go, wysyłając dane logowania do usługi uwierzytelniającej.
@@ -25,6 +33,8 @@ W przypadku podania nieprawidłowych danych otrzymasz komunikat o błędzie:
     {
 	    "errors": ['Invalid login or password']
     }
+
+!> Przy stosowaniu tokenów mogą występować limity zależne od użytego sposobu komunikacji z serwerem. Więcej o tym przeczytasz niżej.
 
 ## WebAPI
 

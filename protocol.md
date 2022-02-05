@@ -1,8 +1,10 @@
 # Protokół
 
-Protokół definiuje komunikaty za pomocą których rozmawiają klienty i serwer oraz opisuje w jaki sposób i w jakim formacie są one wymieniane. Przesyłane wiadomości można podzielić na komendy, zdarzenia i odpowiedzi.
+Protokół definiuje komunikaty, za pomocą których rozmawiają klienty i serwer oraz opisuje, w jaki sposób i w jakim formacie są one wymieniane. Przesyłane wiadomości można podzielić na komendy, zdarzenia i odpowiedzi.
 
 ## Rodzaje wiadomości
+
+![Schemat](img/protocol.png)
 
 ### Komendy
 
