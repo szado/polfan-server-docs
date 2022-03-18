@@ -54,7 +54,7 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 |---------------|---------------------------------------------|---------------------------------------------------------------------|
 | `roleId`      | `UUID`                                      | ID roli                                                             |
 | `layer`       | `"Space"`&#124;`"Room"`&#124;`"Topic"`      | warstwa dla której chcemy zdefiniować uprawnienia                   |
-| `layerId`     | `integer`                                   | ID warstwy (przestrzeni, pokoju lub tematu)                         |
+| `layerId`     | `UUID`                                      | ID warstwy (przestrzeni, pokoju lub tematu)                         |
 | `permissions` | [`Permission[]`](permissions.md#permission) | tablica uprawnień (te wartości **nadpiszą istniejące uprawnienia**) |
 
 #### `Permission`
@@ -92,7 +92,7 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 |-----------|----------------------------------------|--------------------------------------------------------------------------|
 | `roleId`  | `string`                               | ID roli                                                                  |
 | `layer`   | `"Space"`&#124;`"Room"`&#124;`"Topic"` | warstwa dla której chcemy pobrać uprawnienia                             |
-| `layerId` | `integer`                              | ID warstwy (przestrzeni, pokoju lub tematu)                              |
+| `layerId` | `UUID`                                 | ID warstwy (przestrzeni, pokoju lub tematu)                              |
 | `names`   | `string[]`&#124;`null`                 | tablica nazw uprawnień do pobrania, domyślnie zwrócone zostaną wszystkie |
 
 ### `Permissions`
@@ -128,7 +128,7 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 |---------------|--------------------------------------------------------|----------------------------------------------------------------------------------------|
 | `userId`      | `string`                                               | ID użytkownika                                                                         |
 | `layer`       | `"Global"`&#124;`"Space"`&#124;`"Room"`&#124;`"Topic"` | warstwa dla której chcemy zdefiniować uprawnienia                                      |
-| `layerId`     | `integer`&#124;`null`                                  | ID warstwy (przestrzeni, pokoju lub tematu). Przypisz `null` jeśli warstwa to `Global` |
+| `layerId`     | `UUID`&#124;`null`                                     | ID warstwy (przestrzeni, pokoju lub tematu). Przypisz `null` jeśli warstwa to `Global` |
 | `permissions` | [`Permission[]`](permissions.md#permission)            | tablica uprawnień (te wartości **nadpiszą istniejące uprawnienia**)                    |
 
 ### Możliwe kody błędów w `Error`
@@ -158,7 +158,7 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 |-----------|--------------------------------------------------------|----------------------------------------------------------------------------------------|
 | `userId`  | `string`                                               | ID użytkownika                                                                         |
 | `layer`   | `"Global"`&#124;`"Space"`&#124;`"Room"`&#124;`"Topic"` | warstwa dla której chcemy pobrać uprawnienia                                           |
-| `layerId` | `integer`                                              | ID warstwy (przestrzeni, pokoju lub tematu). Przypisz `null` jeśli warstwa to `Global` |
+| `layerId` | `UUID`                                                 | ID warstwy (przestrzeni, pokoju lub tematu). Przypisz `null` jeśli warstwa to `Global` |
 | `names`   | `string[]`&#124;` null`                                | tablica nazw uprawnień do pobrania, domyślnie zwrócone zostaną wszystkie               |
 
 ### Możliwe kody błędów w `Error`

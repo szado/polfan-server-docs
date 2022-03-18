@@ -29,14 +29,14 @@ Jeśli komenda zakończyła działanie bez modyfikacji stanu, odpowiedź z jej w
 Wiadomości przesyłane są w formacie JSON i zbudowane są w następujący sposób:
 
 ```
-    {
-        "_": {
-            "type": <string>,
-            "ref": <string|null>
-        },
-        
-        // ...pola zależne od typu wiadomości...
-    }
+{
+    "_": {
+        "type": <string>,
+        "ref": <string|null>
+    },
+    
+    // ...pola zależne od typu wiadomości...
+}
 ```
 
 Dozwolone typy wiadomości wraz z opisami ich pól znajdują się w dalszej części dokumentacji.
