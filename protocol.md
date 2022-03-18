@@ -1,6 +1,6 @@
 # Protokół
 
-Protokół definiuje komunikaty, za pomocą których rozmawiają [klienty i serwer](connection.md#połączenie) oraz opisuje, w jaki sposób i w jakim formacie są one wymieniane.
+Protokół definiuje komunikaty, za pomocą których rozmawiają [klienty i serwer](connection.md#połączenie) oraz opisuje ich format.
 
 ## Rodzaje wiadomości
 
