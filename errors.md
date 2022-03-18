@@ -1,11 +1,24 @@
 # Obsługa błędów
 
-W odpowiedzi na wydanie dowolnej komendy, serwer może zwrócić wiadomość o typie `Error`:
+W odpowiedzi na komendę serwer może zwrócić wiadomość o typie `Error`:
 
 | Pole      | Typ      | Opis                        |
 |-----------|----------|-----------------------------|
 | `code`    | `string` | kod błędu                   |
 | `message` | `string` | opis czytelny dla człowieka |
+
+## Przykładowa wiadomość `Error`
+
+```json
+{
+  "_": {
+    "type": "Error",
+    "ref": null
+  },
+  "code": "ProtocolException",
+  "message": "Invalid JSON"
+}
+```
 
 ## Globalne kody błędów
 
@@ -16,5 +29,6 @@ Błędy wymienione w poniższej tabeli mogą wystąpić niezależnie od wykonywa
 | `400`             | `ProtocolException`            | nieprawidłowy typ wiadomości, błąd walidacji, błąd formatu JSON |
 | `401`             | `AuthenticationException`      | błąd uwierzytelniania (np. nieprawidłowy token)                 |
 | `403`             | `AccessDeniedException`        | brak wymaganych uprawnień                                       |
-| `422`             | zależny od wykonywanej komendy | opisy poszczególnych komend zawierają szczegóły wystąpienia     |
 | `500`             | `UnexpectedServerException`    | błąd serwera                                                    |
+
+!> W przypadku WebAPI, wszystkie inne błędy generowane przez poszczególne komendy zwracane będą z kodem HTTP `422`.

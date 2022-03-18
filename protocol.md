@@ -1,6 +1,6 @@
 # Protokół
 
-Protokół definiuje komunikaty, za pomocą których rozmawiają [klienty i serwer](connection.md#połączenie) oraz opisuje, w jaki sposób i w jakim formacie są one wymieniane. Przesyłane wiadomości można podzielić na komendy, zdarzenia i odpowiedzi.
+Protokół definiuje komunikaty, za pomocą których rozmawiają [klienty i serwer](connection.md#połączenie) oraz opisuje, w jaki sposób i w jakim formacie są one wymieniane.
 
 ## Rodzaje wiadomości
 
@@ -8,36 +8,39 @@ Protokół definiuje komunikaty, za pomocą których rozmawiają [klienty i serw
 
 ### Komendy
 
-Komendy zawsze wysyłane są przez klienty i podlegają przetworzeniu po stronie serwera. 
+Komendy wysyłane są przez klienta i podlegają przetworzeniu po stronie serwera. 
 
 ### Zdarzenia
 
-Jeśli komenda zmieniła stan serwera, wyemituje on zdarzenie informujące o zmianie do każdego klienta, którego ten stan dotyczył. 
+Jeśli komenda zmieniła stan serwera, wyemituje on odpowiednie zdarzenie do każdego klienta, którego dotyczy zmiana. 
 
-**Przykład:** *wysłanie komendy `CreateMessage` tworzącej wiadomość spowoduje emisję zdarzenia `NewMessage` do wszystkich obecnych w pokoju*.
+**Przykład:** *wysłanie komendy `CreateMessage` spowoduje emisję zdarzenia `NewMessage` do wszystkich obecnych w pokoju*.
 
 ### Odpowiedzi
 
 Jeśli komenda zakończyła działanie bez modyfikacji stanu, odpowiedź o jej wyniku otrzyma jedynie klient który ją wydał.
 
-**Przykład 1:** *wysłanie komendy `GetUserPermissions` pobierającej listę uprawnień spowoduje odesłanie wiadomości `Permissions` w odpowiedzi do źródłowego klienta.*
+**Przykład 1:** *wysłanie komendy `GetUserPermissions` spowoduje odesłanie wiadomości `Permissions` w odpowiedzi do źródłowego klienta.*
 
-**Przykład 2:** *wysłanie komendy `CreateMessage` tworzącej wiadomość, przez użytkownika który nie posiada wymaganych uprawnień, spowoduje odesłanie wiadomości `Error` w odpowiedzi do źródłowego klienta.*
+**Przykład 2:** *wysłanie komendy `CreateMessage`, przez użytkownika który nie posiada wymaganych uprawnień, spowoduje emisję wiadomości `Error` w odpowiedzi.*
 
 ## Format wiadomości
 
-Wiadomości przesyłane są w formacie JSON i wyglądają w następujący sposób.
+Wiadomości przesyłane są w formacie JSON i posiadają następujący format
 
-```json
+```
     {
-	    "_": {
-		    "type": "JoinSpace",
-		    "ref": 23
-	    },
-	    "id": "a3a38d09-613d-4b83-bd63-0737d1daad1b"
+        "_": {
+            "type": <string>,
+            "ref": <string|null>
+        },
+        
+        // ...pola zależne od typu wiadomości...
     }
 ```
 
-Dozwolone typy wiadomości wraz z ich polami znajdują się w dalszej części dokumentacji.
+Dozwolone typy wiadomości wraz z opisami ich pól znajdują się w dalszej części dokumentacji.
 
-Ponieważ komunikacja z serwerem ma charakter asynchroniczny, w celu łatwego namierzenia konkretnej odpowiedzi z serwera, klient może nadać komendzie wysyłanej do serwera identyfikator referencyjny. Identyfikator zostanie zwrócony w wiadomości/zdarzeniu odpowiadającym na komendę. Z tego powodu, identyfikatory powinny zawierać losową, unikalną wartość (np. UUID lub inkrementowany licznik wydanych komend).
+!> Ponieważ komunikacja z serwerem ma charakter asynchroniczny, w celu identyfikacji konkretnej wiadomości pochodzącej z serwera, klient może nadać wysyłanej komendzie identyfikator referencyjny w polu `ref`. Identyfikator zostanie przepisany przez serwer do pola `ref` w wiadomości zwrotnej. Z tego powodu wartość ta powinna być unikalna (np. UUID).
+
+!> Maksymalna długość identyfikatora w polu `ref` to 36 znaków.

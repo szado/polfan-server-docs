@@ -10,7 +10,7 @@
 
 ## Token dostępowy
 
-Aby nawiązać połączenie z serwerem, potrzebujesz tokena dostępowego. Uzyskasz go, wysyłając dane logowania do usługi uwierzytelniającej.
+Do nawiązania połączenia z serwerem potrzebny jest token dostępowy. Uzyskasz go, wysyłając dane logowania do usługi uwierzytelniającej.
 
     POST https://polfan.pl/webservice/auth/token
     {
@@ -34,7 +34,7 @@ W przypadku podania nieprawidłowych danych otrzymasz komunikat o błędzie:
 	    "errors": ['Invalid login or password']
     }
 
-!> Przy stosowaniu tokenów mogą występować limity zależne od użytego sposobu komunikacji z serwerem. Więcej o tym przeczytasz niżej.
+!> Podczas użycia tokenów mogą występować pewne limity, zależne od użytego sposobu komunikacji z serwerem. Więcej o tym przeczytasz niżej.
 
 ## WebAPI
 
