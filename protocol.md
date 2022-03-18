@@ -26,7 +26,7 @@ Jeśli komenda zakończyła działanie bez modyfikacji stanu, odpowiedź z jej w
 
 ## Format wiadomości
 
-Wiadomości przesyłane są w formacie JSON i posiadają następujący format
+Wiadomości przesyłane są w formacie JSON i posiadają następujący format:
 
 ```
     {
