@@ -18,7 +18,7 @@ Jeśli komenda zmieniła stan serwera, wyemituje on odpowiednie zdarzenie do ka�
 
 ### Odpowiedzi
 
-Jeśli komenda zakończyła działanie bez modyfikacji stanu, odpowiedź o jej wyniku otrzyma jedynie klient który ją wydał.
+Jeśli komenda zakończyła działanie bez modyfikacji stanu, odpowiedź z jej wynikiem otrzyma jedynie klient który ją wydał.
 
 **Przykład 1:** *wysłanie komendy `GetUserPermissions` spowoduje odesłanie wiadomości `Permissions` w odpowiedzi do źródłowego klienta.*
 
