@@ -89,13 +89,13 @@ Zdarzenie informujące o usunięciu roli. Wszyscy użytkownicy, którzy ją posi
 
 ## Przyznawanie roli członkowi
 
-Komenda `AddMemberRole` umożliwia przyznanie roli członkowi przestrzeni.
+Komenda `AssignRole` umożliwia przyznanie roli członkowi przestrzeni.
 
 W przypadku powodzenia wszyscy członkowie w pokoju otrzymają zdarzenie `SpaceMemberUpdate`.
 
 W przypadku błędu serwer wyśle odpowiedź `Error`.
 
-### `AddMemberRole`
+### `AssignRole`
 
 Żądanie przyznania roli użytkownikowi.
 
@@ -118,13 +118,13 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 ## Odbieranie roli członkowi
 
-Komenda `DeleteMemberRole` umożliwia odebranie roli użytkownikowi.
+Komenda `DeassignRole` umożliwia odebranie roli użytkownikowi.
 
 W przypadku powodzenia, wszyscy członkowie przestrzeni otrzymają zdarzenie `SpaceMemberUpdate`.
 
 W przypadku błędu serwer wyśle odpowiedź `Error`.
 
-### `DeleteMemberRole`
+### `DeassignRole`
 
 Żądanie odebrania roli użytkownikowi.
 
