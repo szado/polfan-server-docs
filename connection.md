@@ -4,9 +4,9 @@
 
 **Serwer** — usługa czatu.
 
-**Użytkownik/bot** — fizyczna osoba lub usługa mająca przypisane pojedyncze konto, identyfikująca się loginem i hasłem.
+**Użytkownik** — fizyczna osoba lub usługa (bot) mająca przypisane pojedyncze konto, identyfikująca się loginem i hasłem.
 
-**Klient** — oprogramowanie nawiązujące połączenie z serwerem, reprezentujące użytkownika, identyfikowane za pomocą tokena.
+**Klient** — oprogramowanie nawiązujące pojedyncze połączenie z serwerem, reprezentujące użytkownika, identyfikowane za pomocą unikalnego tokena. Użytkownik może posiadać wiele podłączonych klientów.
 
 ## Token dostępowy
 
