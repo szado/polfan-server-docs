@@ -11,12 +11,14 @@ W odpowiedzi na komendę serwer może zwrócić wiadomość o typie `Error`:
 
 ```json
 {
-  "_": {
+  "meta": {
     "type": "Error",
     "ref": null
   },
-  "code": "ProtocolException",
-  "message": "Invalid JSON"
+  "data": {
+    "code": "ProtocolException",
+    "message": "Invalid JSON"
+  }
 }
 ```
 

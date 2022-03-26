@@ -6,27 +6,17 @@ Protokół definiuje komunikaty, za pomocą których rozmawiają [klienty i serw
 
 ![Schemat](img/protocol.png)
 
-Wiadomości protokołu zostały umownie podzielone na 3 grupy opisujące ich sposób użycia.
-
 ### Komendy
 
 Komendy wysyłane są przez klienta i podlegają przetworzeniu po stronie serwera. 
 
 ### Zdarzenia
 
-Zdarzenie to wiadomość wysyłana do wielu klientów jednocześnie w celu poinformowania o zmianie stanu.
+Zdarzenia to wiadomości wysyłane do jednego lub wielu klientów jednocześnie w celu poinformowania o zmianie stanu lub w wyniku działania komendy.
 
 **Przykład:** *wysłanie komendy `CreateMessage` spowoduje emisję zdarzenia `NewMessage` do wszystkich obecnych w pokoju*.
 
-### Odpowiedzi
-
-Odpowiedź to wiadomość wysyłana przez serwer w reakcji na wydaną komendę, jedynie do klienta, który ją wydał.
-
-Odpowiedzią może być np. informacja o błędzie.
-
-**Przykład 1:** *wysłanie komendy `GetUserPermissions` spowoduje odesłanie wiadomości `Permissions` w odpowiedzi do źródłowego klienta.*
-
-**Przykład 2:** *wysłanie komendy `CreateMessage`, przez użytkownika który nie posiada wymaganych uprawnień, spowoduje emisję wiadomości `Error` w odpowiedzi.*
+**Przykład:** *wysłanie komendy `DeleteRoom` przez użytkownika nieposiadającego wymaganych uprawnień, spowoduje emisję zdarzenia `Error` do tego użytkownika.*
 
 ## Format wiadomości
 
@@ -34,12 +24,13 @@ Wiadomości przesyłane są w formacie JSON i zbudowane są w następujący spos
 
 ```
 {
-    "_": {
+    "meta": {
         "type": <string>,
         "ref": <string|null>
     },
-    
-    // ...pola zależne od typu wiadomości...
+    "data": {
+        // pola zależne od typu wiadomości
+    }
 }
 ```
 

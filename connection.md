@@ -118,61 +118,66 @@ Zdarzenie zawierające pełną informację o stanie sesji na moment nawiązania 
 
 ```json
 {
-  "_": {
-    "type": "Welcome"
+  "meta": {
+    "type": "Welcome",
+    "ref": null
   },
-  "serverVersion": "PolfanServer/0.0.1",
-  "global": {},
-  "spaces": [
-    {
-      "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
-      "basicData": {
-        "name": "Hogwart"
-      },
-      "roles": [
-        {
-          "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
-          "basicData": {
-            "name": "Gryffindor",
-            "color": "#ff0000"
-          }
-        }
-      ],
-      "members": [
-        {
-          "user": {
-            "id": "1002",
-            "basicData": {
-              "nick": "Harry Potter",
-              "avatar": ""
-            }
-          }, 
-          "roles": ["252e63a0-10cf-4856-bdcb-db2b2aadedd2"]
-        }
-      ]
-    }
-  ],
-  "rooms": [
-    {
-      "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
-      "spaceId": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
-      "basicData": {
-        "name": "Zamek",
-        "description": ""
-      },
-      "topics": {
+  "data": {
+    "serverVersion": "PolfanServer/0.0.1",
+    "global": {},
+    "spaces": [
+      {
         "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
         "basicData": {
-          "name": "Wielka sala",
+          "name": "Hogwart"
+        },
+        "roles": [
+          {
+            "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
+            "basicData": {
+              "name": "Gryffindor",
+              "color": "#ff0000"
+            }
+          }
+        ],
+        "members": [
+          {
+            "user": {
+              "id": "1002",
+              "basicData": {
+                "nick": "Harry Potter",
+                "avatar": ""
+              }
+            },
+            "roles": [
+              "252e63a0-10cf-4856-bdcb-db2b2aadedd2"
+            ]
+          }
+        ]
+      }
+    ],
+    "rooms": [
+      {
+        "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
+        "spaceId": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
+        "basicData": {
+          "name": "Zamek",
           "description": ""
-        }
-      },
-      "members": [
-        {
-          "userId": "1002"
-        }
-      ]
-    }
-  ]
+        },
+        "topics": {
+          "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
+          "basicData": {
+            "name": "Wielka sala",
+            "description": ""
+          }
+        },
+        "members": [
+          {
+            "userId": "1002"
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
