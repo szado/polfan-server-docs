@@ -42,9 +42,9 @@ Nadpisanie uprawnień to proces mający na celu ustalenie wyniku obliczeń na po
 
 Komenda `SetRolePermissions` umożliwia definicję wartości uprawnień dla roli w [warstwie 2., 4. i 6](permissions.md#warstwy).
 
-W przypadku powodzenia klient otrzyma odpowiedź `Ok`.
+W przypadku powodzenia klient otrzyma zdarzenie `Permissions` z zaktualizowanymi uprawnieniami.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `SetRolePermissions`
 
@@ -78,11 +78,11 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 ## Pobieranie uprawnień roli
 
-Komenda `GetRolePermissions` umożliwia pobranie wartości uprawnień dla roli z [warstwy 2., 4. i 6](permissions.md#warstwy).
+Komenda `GetRolePermissions` umożliwia pobranie wartości uprawnień przypisanych podanej roli z [warstwy 2., 4. lub 6](permissions.md#warstwy).
 
-W przypadku powodzenia klient otrzyma odpowiedź `Permissions`.
+W przypadku powodzenia klient otrzyma zdarzenie `Permissions`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `GetRolePermissions`
 
@@ -116,9 +116,9 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 Komenda `SetMemberPermissions` umożliwia definicję wartości uprawnień dla użytkownika w [warstwie 1., 3., 5. i 7](permissions.md#warstwy).
 
-W przypadku powodzenia klient otrzyma odpowiedź `Ok`.
+W przypadku powodzenia klient otrzyma zdarzenie `Ok`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `SetMemberPermissions`
 
@@ -144,11 +144,11 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 ## Pobieranie uprawnień użytkownika
 
-Komenda `GetMemberPermissions` umożliwia pobranie wartości uprawnień dla roli z [warstwy 1., 3., 5. i 7](permissions.md#warstwy).
+Komenda `GetMemberPermissions` umożliwia pobranie wartości uprawnień przypisanych podanemu użytkownikowi na [warstwie 1., 3., 5. lub 7](permissions.md#warstwy).
 
-W przypadku powodzenia klient otrzyma odpowiedź [`Permissions`](permissions.md#permissions).
+W przypadku powodzenia klient otrzyma zdarzenie [`Permissions`](permissions.md#permissions).
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `GetMemberPermissions`
 
@@ -176,9 +176,9 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 
 Komenda `GetComputedPermissions` umożliwia pobranie obliczonych uprawnień dla aktualnego użytkownika.
 
-W przypadku powodzenia klient otrzyma odpowiedź `Permissions`.
+W przypadku powodzenia klient otrzyma zdarzenie `Permissions`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `GetComputedPermissions`
 

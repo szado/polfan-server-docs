@@ -8,7 +8,7 @@ Komenda `CreateMessage` umożliwia utworzenie nowej wiadomości w temacie.
 
 W przypadku powodzenia wszyscy członkowie w pokoju otrzymają zdarzenie `NewMessage`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `CreateMessage`
 
@@ -35,7 +35,7 @@ Komenda `CreateTopic` umożliwia utworzenie nowego tematu. Aby utworzyć nowy te
 
 W przypadku powodzenia wszyscy członkowie w pokoju otrzymają zdarzenie `NewTopic`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `CreateTopic`
 
@@ -86,7 +86,7 @@ Komenda `DeleteTopic` umożliwia usunięcie tematu wraz z historią wiadomości.
 
 W przypadku powodzenia wszyscy członkowie pokoju otrzymają zdarzenie `TopicDeleted`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `DeleteTopic`
 

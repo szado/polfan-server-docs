@@ -22,7 +22,7 @@ Zdarzenia to wiadomości wysyłane do jednego lub wielu klientów jednocześnie 
 
 Wiadomości przesyłane są w formacie JSON i zbudowane są w następujący sposób:
 
-```
+``` 
 {
     "meta": {
         "type": <string>,

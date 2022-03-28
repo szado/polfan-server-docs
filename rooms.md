@@ -8,7 +8,7 @@ Komenda `JoinRoom` umożliwia wejście do pokoju.
 
 W przypadku powodzenia klient dołączający otrzyma zdarzenie `RoomJoined`, natomiast użytkownicy będący już w pokoju`RoomMemberJoined`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `JoinRoom`
 
@@ -73,7 +73,7 @@ Komenda `LeaveRoom` umożliwia wyjście z pokoju.
 
 W przypadku powodzenia użytkownik opuszczający otrzyma zdarzenie `RoomLeft`, natomiast pozostali użytkownicy  w pokoju`RoomMemberLeft`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `LeaveRoom`
 
@@ -114,7 +114,7 @@ Komenda `CreateRoom` umożliwia utworzenie nowego pokoju. Aby utworzyć nowy pok
 
 W przypadku powodzenia wszyscy użytkownicy obecni w przestrzeni otrzymają zdarzenie `NewRoom`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `CreateRoom`
 
@@ -158,7 +158,7 @@ Komenda `DeleteRoom` umożliwia usunięcie pokoju.
 
 W przypadku powodzenia, klient i wszyscy członkowie otrzymają zdarzenie `RoomDeleted`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `DeleteRoom`
 

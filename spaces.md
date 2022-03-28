@@ -6,9 +6,9 @@ Przestrzeń to wyizolowany zbiór użytkowników, pokoi i powiązanych ustawień
 
 Komenda `JoinSpace` umożliwia wejście do przestrzeni. 
 
-W przypadku powodzenia, klient dołączający otrzyma zdarzenie `SpaceJoined`, natomiast użytkownicy będący już w przestrzeni `SpaceMemberJoined`.
+W przypadku powodzenia klient dołączający otrzyma zdarzenie `SpaceJoined`, natomiast użytkownicy będący już w przestrzeni `SpaceMemberJoined`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `JoinSpace`
 
@@ -86,7 +86,7 @@ Komenda `LeaveSpace` umożliwia opuszczenie przestrzeni.
 
 W przypadku powodzenia klient dołączający otrzyma zdarzenie `SpaceLeft`, natomiast pozostali użytkownicy w przestrzeni `SpaceMemberLeft`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `LeaveSpace`
 
@@ -127,7 +127,7 @@ Komenda `CreateSpace` umożliwia utworzenie nowej przestrzeni.
 
 W przypadku powodzenia użytkownik zostanie dołączony do nowej przestrzeni i otrzyma zdarzenie [`SpaceJoined`](#spacejoined).
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `CreateSpace`
 
@@ -137,6 +137,8 @@ W przypadku błędu serwer wyśle odpowiedź `Error`.
 |-------------|----------------------------------------------|------------------------------------------------------|
 | `id`        | `UUID`                                       | wygenerowany przez klienta identyfikator przestrzeni |
 | `basicData` | [`SpaceBasicData`](spaces.md#spacebasicdata) | podstawowe informacje o  przestrzeni                 |
+
+{payload-example CreateSpace}
 
 ### Możliwe kody błędów w `Error`
 
@@ -153,7 +155,7 @@ Komenda `DeleteSpace` umożliwia usunięcie przestrzeni.
 
 W przypadku powodzenia klient i wszyscy członkowie otrzymają zdarzenie `SpaceDeleted`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `DeleteSpace`
 

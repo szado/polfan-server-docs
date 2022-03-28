@@ -8,7 +8,7 @@ Komenda `CreateRole` umożliwia utworzenie nowej roli w przestrzeni.
 
 W przypadku powodzenia wszyscy członkowie przestrzeni otrzymają zdarzenie `NewRole`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `CreateRole`
 
@@ -58,7 +58,7 @@ Komenda `DeleteRole` umożliwia usunięcie roli.
 
 W przypadku powodzenia wszyscy członkowie przestrzeni otrzymają zdarzenie `RoleDeleted`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `DeleteRole`
 
@@ -93,7 +93,7 @@ Komenda `AssignRole` umożliwia przyznanie roli członkowi przestrzeni.
 
 W przypadku powodzenia wszyscy członkowie w pokoju otrzymają zdarzenie `SpaceMemberUpdate`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `AssignRole`
 
@@ -122,7 +122,7 @@ Komenda `DeassignRole` umożliwia odebranie roli użytkownikowi.
 
 W przypadku powodzenia, wszyscy członkowie przestrzeni otrzymają zdarzenie `SpaceMemberUpdate`.
 
-W przypadku błędu serwer wyśle odpowiedź `Error`.
+W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### `DeassignRole`
 

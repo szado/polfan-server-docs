@@ -1,0 +1,906 @@
+{
+    "info": {
+        "_postman_id": "fbbb2b4d-8f7d-446e-a7af-83d900fe4cda",
+        "name": "PolfanServer WebApi",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "CreateSpace",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"ef32f65d-1cb9-49c5-9d15-5102e4f2e30c\",\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\"\n        }\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "DeleteSpace",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeleteSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"fd895861-d648-45c0-94db-014a4739faa8\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "CreateRoom",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"7ffb6b72-9b7d-4303-9d4a-14657daa7f52\",\n        \"spaceId\": \"19b7c449-b8c5-4ab4-9516-34f0e40b7727\",\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\",\n            \"description\": \"test string\"\n        }\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "DeleteRoom",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeleteRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"1e94509f-669f-4bad-8f18-26f5a7a01425\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "CreateTopic",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateTopic\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"b6d5448d-0a2c-4b51-8396-7529921d851a\",\n        \"roomId\": \"4533aa78-4c4b-4745-ac11-43793d48d236\",\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\",\n            \"description\": \"test string\"\n        }\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "DeleteTopic",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeleteTopic\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"63f984a9-a3e6-44e9-918c-86dfa3b68cdf\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "JoinSpace",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"JoinSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"5870f2e2-679c-4126-94b1-2e45aca29a22\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "LeaveSpace",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"LeaveSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"61cc5d64-6a3a-4305-9a21-2413873e1083\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "AssignRole",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"AssignRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"roleId\": \"a5387c52-e420-4d61-8251-2a20753a8867\",\n        \"spaceId\": \"27d4262c-678e-477d-9009-a2e9fc471173\",\n        \"userId\": \"test string\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "DeassignRole",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeassignRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"roleId\": \"73aad638-2a0c-466f-8cd8-a00739ea83d0\",\n        \"spaceId\": \"db509b04-9dcc-4c35-91bd-72aa5b43c3b1\",\n        \"userId\": \"test string\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "JoinRoom",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"JoinRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"ade75822-d893-41a0-a605-7fe975aa8a05\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "LeaveRoom",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"LeaveRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"c3f9394c-9330-447e-98d8-ab5202a40e17\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "CreateMessage",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateMessage\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"topicId\": \"eaff0a00-a7e6-4893-93a5-ad1864bbe816\",\n        \"message\": {\n            \"id\": \"0477ea80-5efa-4586-bca4-0720e90dffdf\",\n            \"blocks\": []\n        }\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "CreateRole",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\",\n            \"color\": null\n        },\n        \"id\": \"537ec2ba-7a45-49d9-a362-368467f845be\",\n        \"spaceId\": \"7cc32621-0635-4d27-bd64-5d5a20382c26\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "DeleteRole",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeleteRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"e40357e5-2fd1-4c20-af4d-a57cade507ad\",\n        \"spaceId\": \"06239604-391f-464f-b8e1-59c0d21f9cac\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "GetComputedPermissions",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"GetComputedPermissions\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"names\": null,\n        \"spaceId\": null,\n        \"roomId\": null,\n        \"topicId\": null\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "SetMemberPermissions",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"SetMemberPermissions\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"permissions\": [],\n        \"layer\": 0,\n        \"layerId\": null,\n        \"userId\": \"test string\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "SetRolePermissions",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"SetRolePermissions\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"permissions\": [],\n        \"layer\": 1,\n        \"layerId\": \"2531bc62-59de-4c99-8c9d-c92269cee75d\",\n        \"roleId\": \"b53c807f-e98c-4db4-bbc1-b05c6efa9b82\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "GetMemberPermissions",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"GetMemberPermissions\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"layer\": 0,\n        \"layerId\": null,\n        \"userId\": \"test string\",\n        \"names\": null\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "GetRolePermissions",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"GetRolePermissions\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"layer\": 1,\n        \"layerId\": \"c8cd8ee0-a7e0-418e-93f1-8ea0dce01aef\",\n        \"roleId\": \"44a8d89d-fc2a-4ed2-8bb1-ba8e8bc5d91e\",\n        \"names\": null\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "",
+                "type": "string"
+            }
+        ]
+    },
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "exec": [
+                    ""
+                ],
+                "type": "text\/javascript"
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "exec": [
+                    ""
+                ],
+                "type": "text\/javascript"
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "url",
+            "value": "http:\/\/localhost:1600\/api",
+            "type": "string"
+        }
+    ]
+}
