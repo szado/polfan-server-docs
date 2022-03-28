@@ -14,10 +14,29 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 Żądanie utworzenia nowej wiadomości.
 
-| Pole      | Typ       | Opis                                                |
-|-----------|-----------|-----------------------------------------------------|
-| `topicId` | `UUID`    | wygenerowany przez klienta identyfikator wiadomości |
-| `message` | `Message` | obiekt wiadomości                                   |
+| Pole      | Typ                            | Opis                                                        |
+|-----------|--------------------------------|-------------------------------------------------------------|
+| `topicId` | `UUID`                         | identyfikator tematu w którym wiadomość ma być opublikowana |
+| `message` | [`Message`](topics.md#message) | obiekt wiadomości                                           |
+
+{payload-example CreateMessage}
+
+### `NewMessage`
+
+Zdarzenie informujące o nowej wiadomości w temacie.
+
+| Pole      | Typ                            | Opis                                                         |
+|-----------|--------------------------------|--------------------------------------------------------------|
+| `topicId` | `UUID`                         | identyfikator tematu w którym wiadomość została opublikowana |
+| `userId`  | `string`                       | identyfikator nadawcy                                        |
+| `message` | [`Message`](topics.md#message) | obiekt wiadomości                                            |
+
+#### `Message`
+
+| Pole   | Typ      | Opis                                                |
+|--------|----------|-----------------------------------------------------|
+| `id`   | `UUID`   | wygenerowany przez klienta identyfikator wiadomości |
+| `text` | `string` | obiekt wiadomości                                   |
 
 ### Możliwe kody błędów w `Error`
 
@@ -46,6 +65,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | `id`        | `UUID`                                       | wygenerowany przez klienta identyfikator tematu |
 | `roomId`    | `UUID`                                       | ID pokoju w którym ma być utworzony temat       |
 | `basicData` | [`TopicBasicData`](topics.md#topicbasicdata) | podstawowe informacje o temacie                 |
+
+{payload-example CreateTopic}
 
 ### `NewTopic`
 
@@ -95,6 +116,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | Pole | Typ    | Opis                 |
 |------|--------|----------------------|
 | `id` | `UUID` | identyfikator tematu |
+
+{payload-example DeleteTopic}
 
 ### `TopicDeleted`
 

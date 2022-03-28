@@ -18,6 +18,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 |------|--------|----------------------|
 | `id` | `UUID` | identyfikator pokoju |
 
+{payload-example JoinRoom}
+
 ### `RoomJoined`
 
 Zdarzenie potwierdzające wejście do pokoju.
@@ -83,6 +85,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 |------|--------|----------------------|
 | `id` | `UUID` | identyfikator pokoju |
 
+{payload-example LeaveRoom}
+
 ### `RoomLeft`
 
 Zdarzenie potwierdzające wyjście z pokoju.
@@ -126,6 +130,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | `spaceId`   | `UUID`                                    | ID przestrzeni w której ma być utworzony pokój  |
 | `basicData` | [`RoomBasicData`](rooms.md#roombasicdata) | podstawowe informacje od przestrzeni            |
 
+{payload-example CreateRoom}
+
 ### `NewRoom`
 
 Zdarzenie informujące o utworzeniu nowego pokoju w przestrzeni.
@@ -167,6 +173,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | Pole | Typ    | Opis                 |
 |------|--------|----------------------|
 | `id` | `UUID` | identyfikator pokoju |
+
+{payload-example DeleteRoom}
 
 ### `RoomDeleted`
 

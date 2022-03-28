@@ -14,11 +14,13 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 Żądanie utworzenia nowej wiadomości.
 
-| Pole        | Typ             | Opis                                                |
-|-------------|-----------------|-----------------------------------------------------|
-| `id`        | `UUID`          | wygenerowany przez klienta identyfikator nowej roli |
-| `spaceId`   | `UUID`          | ID przestrzeni                                      |
-| `basicData` | `RoleBasicData` | podstawowe informacje o roli                        |
+| Pole        | Typ                                       | Opis                                                |
+|-------------|-------------------------------------------|-----------------------------------------------------|
+| `id`        | `UUID`                                    | wygenerowany przez klienta identyfikator nowej roli |
+| `spaceId`   | `UUID`                                    | ID przestrzeni                                      |
+| `basicData` | [`RoleBasicData`](roles.md#rolebasicdata) | podstawowe informacje o roli                        |
+
+{payload-example CreateRole}
 
 ### `NewRole`
 
@@ -69,6 +71,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | `id`      | `UUID` | identyfikator roli        |
 | `spaceId` | `UUID` | identyfikator przestrzeni |
 
+{payload-example DeleteRole}
+
 ### `RoleDeleted`
 
 Zdarzenie informujące o usunięciu roli. Wszyscy użytkownicy, którzy ją posiadali, utracili ją.
@@ -105,6 +109,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | `userId`  | `UUID` | ID użytkownika |
 | `spaceId` | `UUID` | ID przestrzeni |
 
+{payload-example AssignRole}
+
 ### Możliwe kody błędów w `Error`
 
 [Błąd globalny](errors.md#globalne-kody-błędów) lub jeden z poniższych.
@@ -133,6 +139,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | `roleId`  | `UUID` | ID roli        |
 | `userId`  | `UUID` | ID użytkownika |
 | `spaceId` | `UUID` | ID przestrzeni |
+
+{payload-example DeassignRole}
 
 ### `RoleDeleted`
 

@@ -21,7 +21,7 @@
     - [Tworzenie pokoju](rooms.md#tworzenie-pokoju)
     - [Usuwanie pokoju](rooms.md#usuwanie-pokoju)
   - [Tematy](topics.md)
-    - [Tworzenie wiadomości](topics.md#tworzenie-wiadomoci)
+    - [Tworzenie wiadomości](topics.md#tworzenie-wiadomości)
     - [Tworzenie tematu](topics.md#tworzenie-tematu)
     - [Usuwanie tematu](topics.md#usuwanie-tematu)
   - [Role](roles.md)

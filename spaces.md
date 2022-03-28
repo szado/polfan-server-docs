@@ -18,6 +18,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 |------|--------|---------------------------|
 | `id` | `UUID` | identyfikator przestrzeni |
 
+{payload-example JoinSpace}
+
 ### `SpaceJoined`
 
 Zdarzenie potwierdzające wejście do przestrzeni.
@@ -96,6 +98,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 |------|--------|---------------------------|
 | `id` | `UUID` | identyfikator przestrzeni |
 
+{payload-example LeaveSpace}
+
 ### `SpaceLeft`
 
 Zdarzenie potwierdzające opuszczenie przestrzeni.
@@ -164,6 +168,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | Pole | Typ    | Opis                      |
 |------|--------|---------------------------|
 | `id` | `UUID` | identyfikator przestrzeni |
+
+{payload-example DeleteSpace}
 
 ### `SpaceDeleted`
 

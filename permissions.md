@@ -57,6 +57,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | `layerId`     | `UUID`                                      | ID warstwy (przestrzeni, pokoju lub tematu)                         |
 | `permissions` | [`Permission[]`](permissions.md#permission) | tablica uprawnień (te wartości **nadpiszą istniejące uprawnienia**) |
 
+{payload-example SetRolePermissions}
+
 #### `Permission`
 
 | Pole    | Typ       | Opis                                                           |
@@ -95,6 +97,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | `layerId` | `UUID`                                 | ID warstwy (przestrzeni, pokoju lub tematu)                              |
 | `names`   | `string[]`&#124;`null`                 | tablica nazw uprawnień do pobrania, domyślnie zwrócone zostaną wszystkie |
 
+{payload-example GetRolePermissions}
+
 ### `Permissions`
 
 | Pole          | Typ                                         | Opis            |
@@ -131,6 +135,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | `layerId`     | `UUID`&#124;`null`                                     | ID warstwy (przestrzeni, pokoju lub tematu). Przypisz `null` jeśli warstwa to `Global` |
 | `permissions` | [`Permission[]`](permissions.md#permission)            | tablica uprawnień (te wartości **nadpiszą istniejące uprawnienia**)                    |
 
+{payload-example SetMemberPermissions}
+
 ### Możliwe kody błędów w `Error`
 
 [Błąd globalny](errors.md#globalne-kody-błędów) lub jeden z poniższych.
@@ -161,6 +167,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | `layerId` | `UUID`                                                 | ID warstwy (przestrzeni, pokoju lub tematu). Przypisz `null` jeśli warstwa to `Global` |
 | `names`   | `string[]`&#124;` null`                                | tablica nazw uprawnień do pobrania, domyślnie zwrócone zostaną wszystkie               |
 
+{payload-example GetMemberPermissions}
+
 ### Możliwe kody błędów w `Error`
 
 [Błąd globalny](errors.md#globalne-kody-błędów) lub jeden z poniższych.
@@ -190,6 +198,8 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | `roomId`  | `UUID`&#124;`null`     | ID pokoju                                                                |
 | `topicId` | `UUID`&#124;`null`     | ID tematu                                                                |
 | `names`   | `string[]`&#124;`null` | tablica nazw uprawnień do pobrania, domyślnie zwrócone zostaną wszystkie |
+
+{payload-example GetComputedPermissions}
 
 ### Możliwe kody błędów w `Error`
 

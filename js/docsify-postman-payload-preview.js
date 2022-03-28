@@ -35,7 +35,11 @@ const DocsifyPostmanPayloadPreview = {
         const matches = content.matchAll(/{payload-example (.+?)}/g);
         for (let match of matches) {
             const [shortcode, name] = match;
-            const example = this.data[name] || null;
+            let example = this.data[name] || null;
+            if (example) {
+                // Postman dynamic variables:
+                example = example.replaceAll('{{$guid}}', 'e7fa8f5a-aed7-11ec-b909-0242ac120002');
+            }
             content = content.replace(shortcode, this.getDetailsHtml(name, example));
         }
         return content;
