@@ -16,7 +16,6 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 | Pole        | Typ                                       | Opis                                                |
 |-------------|-------------------------------------------|-----------------------------------------------------|
-| `id`        | `UUID`                                    | wygenerowany przez klienta identyfikator nowej roli |
 | `spaceId`   | `UUID`                                    | ID przestrzeni                                      |
 | `basicData` | [`RoleBasicData`](roles.md#rolebasicdata) | podstawowe informacje o roli                        |
 

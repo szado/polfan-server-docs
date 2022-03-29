@@ -139,7 +139,6 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 | Pole        | Typ                                          | Opis                                                 |
 |-------------|----------------------------------------------|------------------------------------------------------|
-| `id`        | `UUID`                                       | wygenerowany przez klienta identyfikator przestrzeni |
 | `basicData` | [`SpaceBasicData`](spaces.md#spacebasicdata) | podstawowe informacje o  przestrzeni                 |
 
 {payload-example CreateSpace}

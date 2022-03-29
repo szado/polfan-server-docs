@@ -36,6 +36,10 @@ Wiadomości przesyłane są w formacie JSON i zbudowane są w następujący spos
 
 Dozwolone typy wiadomości wraz z opisami ich pól znajdują się w dalszej części dokumentacji.
 
-!> Ponieważ komunikacja z serwerem ma charakter asynchroniczny, w celu identyfikacji konkretnej wiadomości pochodzącej z serwera, klient może nadać wysyłanej komendzie identyfikator referencyjny w polu `ref`. Identyfikator zostanie przepisany przez serwer do pola `ref` w wiadomości zwrotnej. Z tego powodu wartość ta powinna być unikalna (np. UUID).
+### Identyfikator referencyjny wiadomości (envelope id)
+
+!> Ponieważ komunikacja z serwerem ma charakter asynchroniczny, w celu identyfikacji konkretnej wiadomości pochodzącej z serwera, klient może nadać wysyłanej komendzie identyfikator referencyjny w polu `ref`. Wartość ta zostanie przepisana przez serwer do pola `ref` w wiadomości zwrotnej. Z tego powodu wartość ta powinna być unikalna (np. UUID).
+
+!> Brak wartości w polu `ref` spowoduje przypisanie jej przez serwer losowego identyfikatora, który zostanie przepisany również do zdarzenia zwróconego w odpowiedzi zgodnie z powyższą zasadą.
 
 !> Maksymalna długość identyfikatora w polu `ref` to 36 znaków.

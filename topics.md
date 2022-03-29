@@ -33,10 +33,9 @@ Zdarzenie informujące o nowej wiadomości w temacie.
 
 #### `Message`
 
-| Pole   | Typ      | Opis                                                |
-|--------|----------|-----------------------------------------------------|
-| `id`   | `UUID`   | wygenerowany przez klienta identyfikator wiadomości |
-| `text` | `string` | obiekt wiadomości                                   |
+| Pole   | Typ      | Opis             |
+|--------|----------|------------------|
+| `text` | `string` | treść wiadomości |
 
 ### Możliwe kody błędów w `Error`
 
@@ -62,7 +61,6 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 | Pole        | Typ                                          | Opis                                            |
 |-------------|----------------------------------------------|-------------------------------------------------|
-| `id`        | `UUID`                                       | wygenerowany przez klienta identyfikator tematu |
 | `roomId`    | `UUID`                                       | ID pokoju w którym ma być utworzony temat       |
 | `basicData` | [`TopicBasicData`](topics.md#topicbasicdata) | podstawowe informacje o temacie                 |
 

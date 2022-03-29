@@ -126,7 +126,6 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 | Pole        | Typ                                       | Opis                                            |
 |-------------|-------------------------------------------|-------------------------------------------------|
-| `id`        | `UUID`                                    | wygenerowany przez klienta identyfikator pokoju |
 | `spaceId`   | `UUID`                                    | ID przestrzeni w której ma być utworzony pokój  |
 | `basicData` | [`RoomBasicData`](rooms.md#roombasicdata) | podstawowe informacje od przestrzeni            |
 

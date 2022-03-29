@@ -38,12 +38,9 @@ W przypadku podania nieprawidłowych danych otrzymasz komunikat o błędzie:
 
 ## WebAPI
 
-WebAPI to usługa sieciowa pozwalająca na komunikację z serwerem w modelu żądanie-odpowiedź za pomocą protokołu HTTP. Za jej pomocą wyślesz do serwera komendy i otrzymasz informacje o ewentualnych błędach, jednak nie otrzymasz zdarzeń związanych z ich wykonaniem. Jeśli chcesz otrzymywać zdarzenia w modelu żądanie-odpowiedź, wykorzystaj webhooki.
+WebAPI to usługa sieciowa pozwalająca na komunikację z serwerem w modelu żądanie-odpowiedź za pomocą protokołu HTTP. Za jej pomocą wyślesz do serwera komendę, a w odpowiedzi otrzymasz zdarzenie zwrotne.
 
-Użyj WebAPI gdy:
-
- - chcesz w prosty sposób wysyłać wiadomości i wykonywać inne komendy,
- - nie potrzebujesz otrzymywać zdarzeń.
+Użyj WebAPI, gdy chcesz w prosty sposób wysyłać wiadomości i wykonywać inne komendy za pomocą pojedynczych żądań HTTP.
 
 ### Uwierzytelnianie
 
@@ -57,10 +54,9 @@ Token prześlij w nagłówku `Authorization: Bearer token_dostępowy`.
 
 W jego ciele prześlij [poprawną komendę](protocol.md). W odpowiedzi możesz otrzymać:
 
-| Kod HTTP | Zawartość                                                                                                                                                                                         |
-|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `200`    | odpowiedź na komendę. W przypadku komend generujących zdarzenia, sporadycznie może to być zdarzenie (z powodu asynchronicznej natury serwera **nie ma na to żadnej gwarancji**)                   |
-| `201`    | wiadomość bez zawartości. Oznacza, że komenda została poprawnie wykonana, a zdarzenie z informacją o modyfikacji stanu zostanie rozesłane do klientów (możesz je odebrać np. za pomocą webhooków) |
+| Kod HTTP | Zawartość            |
+|----------|----------------------|
+| `200`    | odpowiedź na komendę |
 
 lub [wiadomość `Error` z odpowiednim kodem HTTP](errors.md#globalne-kody-błędów).
 
