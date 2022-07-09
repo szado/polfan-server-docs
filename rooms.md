@@ -148,9 +148,10 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `NewRoom`
 
-| Pole      | Typ                                   | Opis                                            |
-|-----------|---------------------------------------|-------------------------------------------------|
-| `summary` | [`RoomSummary`](rooms.md#roomsummary) | wygenerowany przez klienta identyfikator pokoju |
+| Pole      | Typ                                   | Opis                                           |
+|-----------|---------------------------------------|------------------------------------------------|
+| `spaceId` | `UUID`                                | id przestrzeni w której utworzony został pokój |
+| `summary` | [`RoomSummary`](rooms.md#roomsummary) | uproszczony obiekt pokoju                      |
 
 #### `RoomSummary`
 
