@@ -31,7 +31,7 @@ W przypadku podania nieprawidłowych danych otrzymasz komunikat o błędzie:
 
     HTTP 401
     {
-	    "errors": ['Invalid login or password']
+	    "errors": ["Invalid login or password"]
     }
 
 !> Podczas użycia tokenów mogą występować pewne limity, zależne od użytego sposobu komunikacji z serwerem. Więcej o tym przeczytasz niżej.
@@ -48,17 +48,9 @@ Token prześlij w nagłówku `Authorization: Bearer token_dostępowy`.
 
 ### Komunikacja
 
-Żądanie kieruj na adres: 
+Żądanie wyślij na adres `https://s2.polfan.pl/api`.
 
-`https://s2.polfan.pl/api`
-
-W jego ciele prześlij [poprawną komendę](protocol.md). W odpowiedzi możesz otrzymać:
-
-| Kod HTTP | Zawartość            |
-|----------|----------------------|
-| `200`    | odpowiedź na komendę |
-
-lub [wiadomość `Error` z odpowiednim kodem HTTP](errors.md#globalne-kody-błędów).
+W jego ciele prześlij [poprawną komendę](protocol.md). W odpowiedzi otrzymasz zdarzenie odpowiednie dla komendy (HTTP 200) lub [zdarzenie `Error` z innym kodem błędu](errors.md#globalne-kody-błędów).
 
 ## Webhooki
 
@@ -72,7 +64,7 @@ Użyj webhooków gdy:
 
 ## WebSocket
 
-Aby połączyć się z usługą możesz wykorzystać protokół [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket). Za pomocą takiego połączenia możesz wysyłać komendy i otrzymywać wszystkie zdarzenia i odpowiedzi w czasie rzeczywistym.
+Aby połączyć się z usługą możesz wykorzystać protokół [WebSocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket). Za pomocą takiego połączenia możesz wysyłać komendy i otrzymywać wszystkie zdarzenia w czasie rzeczywistym.
 
 Użyj połączenia websocket gdy:
 
@@ -135,20 +127,6 @@ Zdarzenie zawierające pełną informację o stanie sesji na moment nawiązania 
               "color": "#ff0000"
             }
           }
-        ],
-        "members": [
-          {
-            "user": {
-              "id": "1002",
-              "basicData": {
-                "nick": "Harry Potter",
-                "avatar": ""
-              }
-            },
-            "roles": [
-              "252e63a0-10cf-4856-bdcb-db2b2aadedd2"
-            ]
-          }
         ]
       }
     ],
@@ -166,12 +144,7 @@ Zdarzenie zawierające pełną informację o stanie sesji na moment nawiązania 
             "name": "Wielka sala",
             "description": ""
           }
-        },
-        "members": [
-          {
-            "userId": "1002"
-          }
-        ]
+        }
       }
     ]
   }
