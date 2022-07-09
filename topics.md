@@ -6,7 +6,7 @@ Temat jest elementem pokoju, w ramach którego wysyłane są wiadomości oraz za
 
 Komenda `CreateMessage` umożliwia utworzenie nowej wiadomości w temacie.
 
-W przypadku powodzenia wszyscy członkowie w pokoju otrzymają zdarzenie `NewMessage`.
+W przypadku powodzenia wszyscy członkowie w pokoju (łącznie z nadawcą) otrzymają zdarzenie `NewMessage`.
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
