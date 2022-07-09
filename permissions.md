@@ -46,9 +46,7 @@ W przypadku powodzenia klient otrzyma zdarzenie `Permissions` z zaktualizowanymi
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `SetRolePermissions`
-
-Żądanie ustawienia listy uprawnień dla roli.
+#### `SetRolePermissions`
 
 | Pole          | Typ                                         | Opis                                                                |
 |---------------|---------------------------------------------|---------------------------------------------------------------------|
@@ -86,9 +84,7 @@ W przypadku powodzenia klient otrzyma zdarzenie `Permissions`.
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `GetRolePermissions`
-
-Żądanie pobrania listy uprawnień dla roli.
+#### `GetRolePermissions`
 
 | Pole      | Typ                                    | Opis                                                                     |
 |-----------|----------------------------------------|--------------------------------------------------------------------------|
@@ -99,7 +95,7 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 {payload-example GetRolePermissions}
 
-### `Permissions`
+#### `Permissions`
 
 | Pole          | Typ                                         | Opis            |
 |---------------|---------------------------------------------|-----------------|
@@ -124,9 +120,7 @@ W przypadku powodzenia klient otrzyma zdarzenie `Ok`.
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `SetMemberPermissions`
-
-Żądanie ustawienia listy uprawnień dla użytkownika.
+#### `SetMemberPermissions`
 
 | Pole          | Typ                                                    | Opis                                                                                   |
 |---------------|--------------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -156,9 +150,7 @@ W przypadku powodzenia klient otrzyma zdarzenie [`Permissions`](permissions.md#p
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `GetMemberPermissions`
-
-Żądanie pobrania listy uprawnień użytkownika.
+#### `GetMemberPermissions`
 
 | Pole      | Typ                                                    | Opis                                                                                   |
 |-----------|--------------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -188,9 +180,7 @@ W przypadku powodzenia klient otrzyma zdarzenie `Permissions`.
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `GetComputedPermissions`
-
-Żądanie pobrania obliczonej listy uprawnień aktualnego użytkownika.
+#### `GetComputedPermissions`
 
 | Pole      | Typ                    | Opis                                                                     |
 |-----------|------------------------|--------------------------------------------------------------------------|
@@ -203,7 +193,4 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 ### Możliwe kody błędów w `Error`
 
-[Błąd globalny](errors.md#globalne-kody-błędów) lub jeden z poniższych.
-
-|Kod|Opis|
-|-----|-----|
+[Błąd globalny](errors.md#globalne-kody-błędów).

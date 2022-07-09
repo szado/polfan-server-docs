@@ -10,9 +10,7 @@ W przypadku powodzenia klient dołączający otrzyma zdarzenie `SpaceJoined`, na
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `JoinSpace`
-
-Żądanie wejścia do przestrzeni.
+#### `JoinSpace`
 
 | Pole | Typ    | Opis                      |
 |------|--------|---------------------------|
@@ -20,13 +18,11 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 {payload-example JoinSpace}
 
-### `SpaceJoined`
+#### `SpaceJoined`
 
-Zdarzenie potwierdzające wejście do przestrzeni.
-
-| Pole    | Typ                        | Opis                      |
-|---------|----------------------------|---------------------------|
-| `space` | [`Space`](spaces.md#space) | identyfikator przestrzeni |
+| Pole    | Typ                        | Opis                                      |
+|---------|----------------------------|-------------------------------------------|
+| `space` | [`Space`](spaces.md#space) | przestrzeń do której nastąpiło dołączenie |
 
 #### `Space`
 
@@ -35,8 +31,6 @@ Zdarzenie potwierdzające wejście do przestrzeni.
 | `id`            | `UUID`                                       | identyfikator przestrzeni                   |
 | `basicData`     | [`SpaceBasicData`](spaces.md#spacebasicdata) | podstawowe dane przestrzeni                 |
 | `roles`         | [`Role[]`](roles.md#role)                    | tablica zdefiniowanych ról                  |
-| `members`       | [`SpaceMember[]`](spaces.md#spacemember)     | tablica użytkowników obecnych w przestrzeni |
-| `roomSummaries` | [`RoomSummary[]`](rooms.md#roomsummary)      | uproszczona lista pokojów w przestrzeni     |
 
 #### `SpaceBasicData`
 
@@ -65,9 +59,7 @@ Zdarzenie potwierdzające wejście do przestrzeni.
 | `nick`   | `string` | nazwa użytkownika |
 | `avatar` | `string` | awatar            |
 
-### `SpaceMemberJoined`
-
-Zdarzenie informujące o dołączeniu nowego członka do przestrzeni.
+#### `SpaceMemberJoined`
 
 | Pole     | Typ                                    | Opis                       |
 |----------|----------------------------------------|----------------------------|
@@ -90,9 +82,7 @@ W przypadku powodzenia klient dołączający otrzyma zdarzenie `SpaceLeft`, nato
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `LeaveSpace`
-
-Żądanie opuszczenia przestrzeni.
+#### `LeaveSpace`
 
 | Pole | Typ    | Opis                      |
 |------|--------|---------------------------|
@@ -100,17 +90,13 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 {payload-example LeaveSpace}
 
-### `SpaceLeft`
-
-Zdarzenie potwierdzające opuszczenie przestrzeni.
+#### `SpaceLeft`
 
 | Pole | Typ    | Opis                      |
 |------|--------|---------------------------|
 | `id` | `UUID` | identyfikator przestrzeni |
 
-### `SpaceMemberLeft`
-
-Zdarzenie informujące o opuszczeniu przestrzeni przez członka.
+#### `SpaceMemberLeft`
 
 | Pole     | Typ      | Opis           |
 |----------|----------|----------------|
@@ -125,6 +111,66 @@ Zdarzenie informujące o opuszczeniu przestrzeni przez członka.
 | `SpaceNotFoundException` | przestrzeń nie istnieje               |
 | `UserNotFoundException`  | użytkownik nie istnieje w przestrzeni |
 
+## Lista członków przestrzeni
+
+Komenda `GetSpaceMembers` umożliwia pobranie listy członków należących do przestrzeni.
+
+W odpowiedzi serwer wyśle zdarzenie `SpaceMembers`.
+
+W przypadku błędu serwer wyśle zdarzenie `Error`.
+
+#### `GetSpaceMembers`
+
+| Pole | Typ    | Opis                      |
+|------|--------|---------------------------|
+| `id` | `UUID` | identyfikator przestrzeni |
+
+{payload-example GetSpaceMembers}
+
+#### `SpaceMembers`
+
+| Pole      | Typ                                      | Opis           |
+|-----------|------------------------------------------|----------------|
+| `members` | [`SpaceMember[]`](spaces.md#spacemember) | lista członków |
+
+### Możliwe kody błędów w `Error`
+
+[Błąd globalny](errors.md#globalne-kody-błędów) lub jeden z poniższych.
+
+| Kod                      | Opis                                 |
+|--------------------------|--------------------------------------|
+| `UserNotFoundException`  | użytkownik nie należy do przestrzeni |
+
+## Lista pokojów w przestrzeni
+
+Komenda `GetSpaceRooms` umożliwia pobranie listy pokojów należących do przestrzeni.
+
+W odpowiedzi serwer wyśle zdarzenie `SpaceRooms`.
+
+W przypadku błędu serwer wyśle zdarzenie `Error`.
+
+#### `GetSpaceRooms`
+
+| Pole | Typ    | Opis                      |
+|------|--------|---------------------------|
+| `id` | `UUID` | identyfikator przestrzeni |
+
+{payload-example GetSpaceRooms}
+
+#### `SpaceRooms`
+
+| Pole        | Typ                                     | Opis                                      |
+|-------------|-----------------------------------------|-------------------------------------------|
+| `summaries` | [`RoomSummary[]`](rooms.md#roomsummary) | lista uproszczonych informacji o pokojach |
+
+### Możliwe kody błędów w `Error`
+
+[Błąd globalny](errors.md#globalne-kody-błędów) lub jeden z poniższych.
+
+| Kod                     | Opis                                 |
+|-------------------------|--------------------------------------|
+| `UserNotFoundException` | użytkownik nie należy do przestrzeni |
+
 ## Tworzenie przestrzeni
 
 Komenda `CreateSpace` umożliwia utworzenie nowej przestrzeni. 
@@ -133,9 +179,7 @@ W przypadku powodzenia użytkownik zostanie dołączony do nowej przestrzeni i o
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `CreateSpace`
-
-Żądanie utworzenia nowej przestrzeni.
+#### `CreateSpace`
 
 | Pole        | Typ                                          | Opis                                                 |
 |-------------|----------------------------------------------|------------------------------------------------------|
@@ -160,9 +204,7 @@ W przypadku powodzenia klient i wszyscy członkowie otrzymają zdarzenie `SpaceD
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `DeleteSpace`
-
-Żądanie usunięcia przestrzeni.
+#### `DeleteSpace`
 
 | Pole | Typ    | Opis                      |
 |------|--------|---------------------------|
@@ -170,9 +212,7 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 {payload-example DeleteSpace}
 
-### `SpaceDeleted`
-
-Zdarzenie informujące o usunięciu przestrzeni.
+#### `SpaceDeleted`
 
 | Pole | Typ    | Opis                                |
 |------|--------|-------------------------------------|

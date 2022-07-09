@@ -38,8 +38,6 @@ Dozwolone typy wiadomości wraz z opisami ich pól znajdują się w dalszej czę
 
 ### Identyfikator referencyjny wiadomości (envelope id)
 
-!> Ponieważ komunikacja z serwerem ma charakter asynchroniczny, w celu identyfikacji konkretnej wiadomości pochodzącej z serwera, klient może nadać wysyłanej komendzie identyfikator referencyjny w polu `ref`. Wartość ta zostanie przepisana przez serwer do pola `ref` w wiadomości zwrotnej. Z tego powodu wartość ta powinna być unikalna (np. UUID).
+Ponieważ komunikacja z serwerem ma charakter asynchroniczny, w celu identyfikacji konkretnej wiadomości pochodzącej z serwera, klient może nadać wysyłanej komendzie identyfikator referencyjny w polu `ref`. Wartość ta zostanie przepisana przez serwer do pola `ref` w wiadomości zwrotnej. Z tego powodu wartość ta powinna być unikalna (np. UUID). Maksymalna długość identyfikatora w polu `ref` to 36 znaków.
 
-!> Brak wartości w polu `ref` spowoduje przypisanie jej przez serwer losowego identyfikatora, który zostanie przepisany również do zdarzenia zwróconego w odpowiedzi zgodnie z powyższą zasadą.
-
-!> Maksymalna długość identyfikatora w polu `ref` to 36 znaków.
+!> Ponieważ każda wiadomość musi mieć unikalny identyfikator referencyjny, w przypadku gdy klient wysyła wiadomość bez jego uzupełnienia, serwer przypisze go automatycznie.

@@ -10,9 +10,7 @@ W przypadku powodzenia wszyscy członkowie przestrzeni otrzymają zdarzenie `New
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `CreateRole`
-
-Żądanie utworzenia nowej wiadomości.
+#### `CreateRole`
 
 | Pole        | Typ                                       | Opis                                                |
 |-------------|-------------------------------------------|-----------------------------------------------------|
@@ -21,9 +19,7 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 {payload-example CreateRole}
 
-### `NewRole`
-
-Zdarzenie informujące o utworzeniu nowej roli w przestrzeni.
+#### `NewRole`
 
 | Pole      | Typ                     | Opis           |
 |-----------|-------------------------|----------------|
@@ -57,24 +53,20 @@ Zdarzenie informujące o utworzeniu nowej roli w przestrzeni.
 
 Komenda `DeleteRole` umożliwia usunięcie roli.
 
-W przypadku powodzenia wszyscy członkowie przestrzeni otrzymają zdarzenie `RoleDeleted`.
+W przypadku powodzenia wszyscy członkowie przestrzeni otrzymają zdarzenie `RoleDeleted`, co również będzie znaczyło, że osoby, które posiadały rolę, utraciły ją.
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `DeleteRole`
-
-Żądanie usunięcia roli.
+#### `DeleteRole`
 
 | Pole      | Typ    | Opis                      |
 |-----------|--------|---------------------------|
-| `id`      | `UUID` | identyfikator roli        |
+| `roleId`  | `UUID` | identyfikator roli        |
 | `spaceId` | `UUID` | identyfikator przestrzeni |
 
 {payload-example DeleteRole}
 
-### `RoleDeleted`
-
-Zdarzenie informujące o usunięciu roli. Wszyscy użytkownicy, którzy ją posiadali, utracili ją.
+#### `RoleDeleted`
 
 | Pole      | Typ    | Opis                         |
 |-----------|--------|------------------------------|
@@ -98,9 +90,7 @@ W przypadku powodzenia wszyscy członkowie w pokoju otrzymają zdarzenie `SpaceM
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `AssignRole`
-
-Żądanie przyznania roli użytkownikowi.
+#### `AssignRole`
 
 | Pole      | Typ    | Opis           |
 |-----------|--------|----------------|
@@ -125,13 +115,11 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 Komenda `DeassignRole` umożliwia odebranie roli użytkownikowi.
 
-W przypadku powodzenia, wszyscy członkowie przestrzeni otrzymają zdarzenie `SpaceMemberUpdate`.
+W przypadku powodzenia wszyscy członkowie przestrzeni otrzymają zdarzenie `SpaceMemberUpdate`.
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `DeassignRole`
-
-Żądanie odebrania roli użytkownikowi.
+#### `DeassignRole`
 
 | Pole      | Typ    | Opis           |
 |-----------|--------|----------------|
@@ -140,15 +128,6 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 | `spaceId` | `UUID` | ID przestrzeni |
 
 {payload-example DeassignRole}
-
-### `RoleDeleted`
-
-Zdarzenie informujące o usunięciu roli. Wszyscy użytkownicy którzy ją posiadali, utracili ją.
-
-| Pole      | Typ    | Opis                         |
-|-----------|--------|------------------------------|
-| `id`      | `UUID` | identyfikator usuniętej roli |
-| `spaceId` | `UUID` | identyfikator przestrzeni    |
 
 ### Możliwe kody błędów w `Error`
 

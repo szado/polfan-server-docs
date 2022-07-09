@@ -32,7 +32,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"e667a9bc-a7e8-495a-a9bc-f810f3ca2eb7\",\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\"\n        }\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\"\n        }\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -75,7 +75,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeleteSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"b80848f4-4817-49c3-afff-9c6e12d0801f\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeleteSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -118,7 +118,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"3840a188-81bc-4f01-9671-8500f7a3ef78\",\n        \"spaceId\": \"d310de80-c783-43c8-bd50-be869c6c9ffb\",\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\",\n            \"description\": \"string\"\n        }\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"spaceId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\",\n            \"description\": \"string\"\n        }\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -161,7 +161,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeleteRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"dec6e8ae-ba94-4427-82de-306a62fd9168\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeleteRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -204,7 +204,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateTopic\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"2a6afbac-60d6-4452-8fb7-db9cd23f460e\",\n        \"roomId\": \"916ea78e-50ac-402b-ad21-28e03ff858d1\",\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\",\n            \"description\": \"string\"\n        }\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateTopic\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"roomId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\",\n            \"description\": \"string\"\n        }\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -247,7 +247,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeleteTopic\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"90289c14-b14e-4031-a36d-38d08606df23\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeleteTopic\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -290,7 +290,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"JoinSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"c0e19691-61d5-485c-a15a-673bce23d18e\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"JoinSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -333,7 +333,93 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"LeaveSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"fe39c810-efc7-4b01-beff-8d5a26527efb\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"LeaveSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "GetSpaceMembers",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"GetSpaceMembers\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "GetSpaceRooms",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"GetSpaceRooms\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -376,7 +462,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"AssignRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"roleId\": \"4c0709f5-a84f-42a5-8347-9019d7ee9133\",\n        \"spaceId\": \"333350db-f3f5-470b-967f-071452731df1\",\n        \"userId\": \"string\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"AssignRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"roleId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"spaceId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"userId\": \"string\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -419,7 +505,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeassignRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"roleId\": \"793aefb4-892e-44bc-91d1-51a0887056e9\",\n        \"spaceId\": \"9d697d88-4eed-40cc-9594-cc9c215ae155\",\n        \"userId\": \"string\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeassignRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"roleId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"spaceId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"userId\": \"string\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -462,7 +548,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"JoinRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"9ce63ad2-00d4-45ce-bf32-cc8a6b9d2825\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"JoinRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -505,7 +591,50 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"LeaveRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"fd9ce266-2784-47c4-9da7-c20e60efd8ee\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"LeaveRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{url}}",
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "GetRoomMembers",
+            "event": [
+                {
+                    "listen": "prerequest",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                },
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            ""
+                        ],
+                        "type": "text\/javascript"
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"GetRoomMembers\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -548,7 +677,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateMessage\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"topicId\": \"a3c0c671-7b4b-4743-b80d-e095e7924d7f\",\n        \"message\": {\n            \"id\": \"567f802c-99c2-4cec-a903-585994a86726\",\n            \"text\": \"string\"\n        }\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateMessage\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"topicId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"content\": \"string\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -591,7 +720,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\",\n            \"color\": \"#ff0000\"\n        },\n        \"id\": \"b36be673-5cfd-4f80-b969-181a1a15a84b\",\n        \"spaceId\": \"c70395b5-49dd-44c6-969e-9b0c5e22a2c3\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\",\n            \"color\": \"#ff0000\"\n        },\n        \"spaceId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -634,7 +763,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeleteRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"id\": \"78462a7b-a8aa-4e9f-8e6f-8a688c8ed338\",\n        \"spaceId\": \"c9b1e4f8-28e8-4a69-925f-89daf97796bf\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"DeleteRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"roleId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"spaceId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -720,7 +849,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"SetMemberPermissions\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"permissions\": [\n            {\n                \"name\": \"string\",\n                \"value\": true,\n                \"skip\": true\n            }\n        ],\n        \"layer\": 0,\n        \"layerId\": \"a180af27-2e37-4e98-831c-f09c922dc882\",\n        \"userId\": \"string\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"SetMemberPermissions\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"permissions\": [\n            {\n                \"name\": \"string\",\n                \"value\": true,\n                \"skip\": true\n            }\n        ],\n        \"layer\": 0,\n        \"layerId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"userId\": \"string\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -763,7 +892,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"SetRolePermissions\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"permissions\": [\n            {\n                \"name\": \"string\",\n                \"value\": true,\n                \"skip\": true\n            }\n        ],\n        \"layer\": 1,\n        \"layerId\": \"6ecf75e6-dc2e-4863-ae70-4c76fa3ace07\",\n        \"roleId\": \"80e4d014-7fc8-48bd-b7c3-cc07fd96734a\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"SetRolePermissions\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"permissions\": [\n            {\n                \"name\": \"string\",\n                \"value\": true,\n                \"skip\": true\n            }\n        ],\n        \"layer\": 1,\n        \"layerId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"roleId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -806,7 +935,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"GetMemberPermissions\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"layer\": 0,\n        \"layerId\": \"cbb77d3b-78b2-461d-a568-a2240ddf7988\",\n        \"userId\": \"string\",\n        \"names\": []\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"GetMemberPermissions\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"layer\": 0,\n        \"layerId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"userId\": \"string\",\n        \"names\": []\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -849,7 +978,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"GetRolePermissions\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"layer\": 1,\n        \"layerId\": \"e8da3a45-8aa8-4039-9db5-00ccb90ee35d\",\n        \"roleId\": \"ea8c651f-558a-4237-a415-1b406203a00a\",\n        \"names\": []\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"GetRolePermissions\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"layer\": 1,\n        \"layerId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"roleId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"names\": []\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"

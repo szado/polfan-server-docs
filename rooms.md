@@ -10,9 +10,7 @@ W przypadku powodzenia klient dołączający otrzyma zdarzenie `RoomJoined`, nat
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `JoinRoom`
-
-Żądanie wejścia do pokoju.
+#### `JoinRoom`
 
 | Pole | Typ    | Opis                 |
 |------|--------|----------------------|
@@ -20,9 +18,7 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 {payload-example JoinRoom}
 
-### `RoomJoined`
-
-Zdarzenie potwierdzające wejście do pokoju.
+#### `RoomJoined`
 
 | Pole   | Typ    | Opis                                                |
 |--------|--------|-----------------------------------------------------|
@@ -36,7 +32,6 @@ Zdarzenie potwierdzające wejście do pokoju.
 | `spaceId`   | `UUID`                                    | ID przestrzeni do której należy pokój |
 | `basicData` | [`RoomBasicData`](rooms.md#roombasicdata) | podstawowe informacje o pokoju        |
 | `topics`    | [`Topic[]`](topics.md#topic)              | lista tematów w pokoju                |
-| `members`   | [`RoomMember[]`](rooms.md#roommember)     | lista użytkowników w pokoju           |
 
 #### `RoomBasicData`
 
@@ -47,13 +42,11 @@ Zdarzenie potwierdzające wejście do pokoju.
 
 #### `RoomMember`
 
-| Pole          | Typ      | Opis                                                                         |
-|---------------|----------|------------------------------------------------------------------------------|
-| `userId`      | `string` | ID użytkownika (nawiązujący do [członka przestrzeni](spaces.md#spacemember)) |
+| Pole   | Typ                      | Opis                                                                       |
+|--------|--------------------------|----------------------------------------------------------------------------|
+| `user` | [`User`](spaces.md#user) | dane użytkownika (zobacz: [członkowie przestrzeni](spaces.md#spacemember)) |
 
-### `RoomMemberJoined`
-
-Zdarzenie informujące o dołączeniu nowego członka do pokoju.
+#### `RoomMemberJoined`
 
 | Pole     | Typ                                 | Opis                       |
 |----------|-------------------------------------|----------------------------|
@@ -77,9 +70,7 @@ W przypadku powodzenia użytkownik opuszczający otrzyma zdarzenie `RoomLeft`, n
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `LeaveRoom`
-
-Żądanie wyjścia z pokoju.
+#### `LeaveRoom`
 
 | Pole | Typ    | Opis                 |
 |------|--------|----------------------|
@@ -87,17 +78,13 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 {payload-example LeaveRoom}
 
-### `RoomLeft`
-
-Zdarzenie potwierdzające wyjście z pokoju.
+#### `RoomLeft`
 
 | Pole | Typ    | Opis                 |
 |------|--------|----------------------|
 | `id` | `UUID` | identyfikator pokoju |
 
-### `RoomMemberLeft`
-
-Zdarzenie informujące o dołączeniu nowego członka do pokoju.
+#### `RoomMemberLeft`
 
 | Pole     | Typ      | Opis           |
 |----------|----------|----------------|
@@ -112,6 +99,36 @@ Zdarzenie informujące o dołączeniu nowego członka do pokoju.
 | `RoomNotFoundException` | pokój nie istnieje          |
 | `UserNotFoundException` | użytkownika nie ma w pokoju |
 
+## Lista członków pokoju
+
+Komenda `GetRoomMembers` umożliwia pobranie listy członków należących do pokoju.
+
+W odpowiedzi serwer wyśle zdarzenie `RoomMembers`.
+
+W przypadku błędu serwer wyśle zdarzenie `Error`.
+
+#### `GetRoomMembers`
+
+| Pole | Typ    | Opis                 |
+|------|--------|----------------------|
+| `id` | `UUID` | identyfikator pokoju |
+
+{payload-example GetRoomMembers}
+
+#### `RoomMembers`
+
+| Pole      | Typ                                   | Opis           |
+|-----------|---------------------------------------|----------------|
+| `members` | [`RoomMember[]`](rooms.md#roommember) | lista członków |
+
+### Możliwe kody błędów w `Error`
+
+[Błąd globalny](errors.md#globalne-kody-błędów) lub jeden z poniższych.
+
+| Kod                      | Opis                                 |
+|--------------------------|--------------------------------------|
+| `UserNotFoundException`  | użytkownik nie znajduje się w pokoju |
+
 ## Tworzenie pokoju
 
 Komenda `CreateRoom` umożliwia utworzenie nowego pokoju. Aby utworzyć nowy pokój w przestrzeni, użytkownik musi być jej członkiem.
@@ -120,9 +137,7 @@ W przypadku powodzenia wszyscy użytkownicy obecni w przestrzeni otrzymają zdar
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `CreateRoom`
-
-Żądanie utworzenia nowego pokoju.
+#### `CreateRoom`
 
 | Pole        | Typ                                       | Opis                                            |
 |-------------|-------------------------------------------|-------------------------------------------------|
@@ -131,9 +146,7 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 {payload-example CreateRoom}
 
-### `NewRoom`
-
-Zdarzenie informujące o utworzeniu nowego pokoju w przestrzeni.
+#### `NewRoom`
 
 | Pole      | Typ                                   | Opis                                            |
 |-----------|---------------------------------------|-------------------------------------------------|
@@ -165,9 +178,7 @@ W przypadku powodzenia, klient i wszyscy członkowie otrzymają zdarzenie `RoomD
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `DeleteRoom`
-
-Żądanie usunięcia pokoju.
+#### `DeleteRoom`
 
 | Pole | Typ    | Opis                 |
 |------|--------|----------------------|
@@ -175,9 +186,7 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 {payload-example DeleteRoom}
 
-### `RoomDeleted`
-
-Zdarzenie informujące o usunięciu pokoju.
+#### `RoomDeleted`
 
 | Pole | Typ    | Opis                            |
 |------|--------|---------------------------------|

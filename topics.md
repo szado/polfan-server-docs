@@ -10,32 +10,29 @@ W przypadku powodzenia wszyscy członkowie w pokoju otrzymają zdarzenie `NewMes
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `CreateMessage`
+#### `CreateMessage`
 
-Żądanie utworzenia nowej wiadomości.
-
-| Pole      | Typ                            | Opis                                                        |
-|-----------|--------------------------------|-------------------------------------------------------------|
-| `topicId` | `UUID`                         | identyfikator tematu w którym wiadomość ma być opublikowana |
-| `message` | [`Message`](topics.md#message) | obiekt wiadomości                                           |
+| Pole      | Typ      | Opis                                                        |
+|-----------|----------|-------------------------------------------------------------|
+| `topicId` | `UUID`   | identyfikator tematu w którym wiadomość ma być opublikowana |
+| `content` | `string` | treść wiadomości                                            |
 
 {payload-example CreateMessage}
 
-### `NewMessage`
-
-Zdarzenie informujące o nowej wiadomości w temacie.
+#### `NewMessage`
 
 | Pole      | Typ                            | Opis                                                         |
 |-----------|--------------------------------|--------------------------------------------------------------|
-| `topicId` | `UUID`                         | identyfikator tematu w którym wiadomość została opublikowana |
-| `userId`  | `string`                       | identyfikator nadawcy                                        |
 | `message` | [`Message`](topics.md#message) | obiekt wiadomości                                            |
 
 #### `Message`
 
-| Pole   | Typ      | Opis             |
-|--------|----------|------------------|
-| `text` | `string` | treść wiadomości |
+| Pole      | Typ                      | Opis                                      |
+|-----------|--------------------------|-------------------------------------------|
+| `id`      | `UUID`                   | id wiadomości                             |
+| `author`  | [`User`](spaces.md#user) | dane użytkownika - autora wiadomości      |
+| `topicId` | `UUID`                   | id tematu w którym opublikowano wiadomość |
+| `content` | `string`                 | treść wiadomości                          |
 
 ### Możliwe kody błędów w `Error`
 
@@ -55,9 +52,7 @@ W przypadku powodzenia wszyscy członkowie w pokoju otrzymają zdarzenie `NewTop
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `CreateTopic`
-
-Żądanie utworzenia nowego tematu.
+#### `CreateTopic`
 
 | Pole        | Typ                                          | Opis                                            |
 |-------------|----------------------------------------------|-------------------------------------------------|
@@ -66,9 +61,7 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 {payload-example CreateTopic}
 
-### `NewTopic`
-
-Zdarzenie informujące o utworzeniu nowego tematu w pokoju.
+#### `NewTopic`
 
 | Pole     | Typ                        | Opis       |
 |----------|----------------------------|------------|
@@ -107,9 +100,7 @@ W przypadku powodzenia wszyscy członkowie pokoju otrzymają zdarzenie `TopicDel
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 
-### `DeleteTopic`
-
-Żądanie usunięcia tematu.
+#### `DeleteTopic`
 
 | Pole | Typ    | Opis                 |
 |------|--------|----------------------|
@@ -117,9 +108,7 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 {payload-example DeleteTopic}
 
-### `TopicDeleted`
-
-Zdarzenie informujące o usunięciu tematu.
+#### `TopicDeleted`
 
 | Pole | Typ    | Opis                            |
 |------|--------|---------------------------------|
