@@ -32,7 +32,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\"\n        }\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateSpace\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"name\": \"chat-symbol-name\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -118,7 +118,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"spaceId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\",\n            \"description\": \"string\"\n        }\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateRoom\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"spaceId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"name\": \"chat-symbol-name\",\n        \"description\": \"string\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -204,7 +204,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateTopic\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"roomId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\",\n            \"description\": \"string\"\n        }\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateTopic\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"roomId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"name\": \"chat-symbol-name\",\n        \"description\": \"string\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"
@@ -720,7 +720,7 @@
                 "header": [],
                 "body": {
                     "mode": "raw",
-                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"basicData\": {\n            \"name\": \"chat-symbol-name\",\n            \"color\": \"#ff0000\"\n        },\n        \"spaceId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\"\n    }\n}",
+                    "raw": "{\n    \"meta\": {\n        \"type\": \"CreateRole\",\n        \"ref\": \"{{$guid}}\"\n    },\n    \"data\": {\n        \"spaceId\": \"6b669c25-affa-4205-b540-39c3628d2c7f\",\n        \"name\": \"chat-symbol-name\",\n        \"color\": \"#ff0000\"\n    }\n}",
                     "options": {
                         "raw": {
                             "language": "json"

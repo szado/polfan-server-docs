@@ -54,10 +54,11 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `CreateTopic`
 
-| Pole        | Typ                                          | Opis                                            |
-|-------------|----------------------------------------------|-------------------------------------------------|
-| `roomId`    | `UUID`                                       | ID pokoju w którym ma być utworzony temat       |
-| `basicData` | [`TopicBasicData`](topics.md#topicbasicdata) | podstawowe informacje o temacie                 |
+| Pole          | Typ      | Opis                                      |
+|---------------|----------|-------------------------------------------|
+| `roomId`      | `UUID`   | ID pokoju w którym ma być utworzony temat |
+| `name`        | `string` | nazwa tematu                              |
+| `description` | `string` | opis tematu                               |
 
 {payload-example CreateTopic}
 
@@ -70,15 +71,9 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `Topic`
 
-| Pole        | Typ                                          | Opis                                  |
-|-------------|----------------------------------------------|---------------------------------------|
-| `id`        | `UUID`                                       | ID pokoju                             |
-| `basicData` | [`TopicBasicData`](topics.md#topicbasicdata) | podstawowe informacje o pokoju        |
-
-#### `TopicBasicData`
-
 | Pole          | Typ      | Opis         |
 |---------------|----------|--------------|
+| `id`          | `UUID`   | ID tematu    |
 | `name`        | `string` | nazwa tematu |
 | `description` | `string` | opis tematu  |
 

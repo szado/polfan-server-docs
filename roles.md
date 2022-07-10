@@ -12,10 +12,11 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `CreateRole`
 
-| Pole        | Typ                                       | Opis                                                |
-|-------------|-------------------------------------------|-----------------------------------------------------|
-| `spaceId`   | `UUID`                                    | ID przestrzeni                                      |
-| `basicData` | [`RoleBasicData`](roles.md#rolebasicdata) | podstawowe informacje o roli                        |
+| Pole      | Typ                  | Opis                                    |
+|-----------|----------------------|-----------------------------------------|
+| `spaceId` | `UUID`               | ID przestrzeni                          |
+| `name`    | `string`             | nazwa roli                              |
+| `color`   | `string`&#124;`null` | kolor roli w formacie HEX (np. #ff0000) |
 
 {payload-example CreateRole}
 
@@ -28,17 +29,11 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `Role`
 
-| Pole        | Typ                                       | Opis                 |
-|-------------|-------------------------------------------|----------------------|
-| `id`        | `UUID`                                    | ID roli              |
-| `basicData` | [`RoleBasicData`](roles.md#rolebasicdata) | podstawowe dane roli |
-
-#### `RoleBasicData`
-
-| Pole    | Typ                  | Opis       |
-|---------|----------------------|------------|
-| `name`  | `string`             | nazwa roli |
-| `color` | `string`&#124;`null` | kolor roli |
+| Pole   | Typ                  | Opis       |
+|--------|----------------------|------------|
+| `id`   | `UUID`               | ID roli    |
+| `name` | `string`             | nazwa roli |
+| `name` | `string`&#124;`null` | kolor roli |
 
 ### Możliwe kody błędów w `Error`
 

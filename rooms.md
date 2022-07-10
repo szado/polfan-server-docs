@@ -26,19 +26,13 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `Room`
 
-| Pole        | Typ                                       | Opis                                  |
-|-------------|-------------------------------------------|---------------------------------------|
-| `id`        | `UUID`                                    | ID pokoju                             |
-| `spaceId`   | `UUID`                                    | ID przestrzeni do której należy pokój |
-| `basicData` | [`RoomBasicData`](rooms.md#roombasicdata) | podstawowe informacje o pokoju        |
-| `topics`    | [`Topic[]`](topics.md#topic)              | lista tematów w pokoju                |
-
-#### `RoomBasicData`
-
-| Pole          | Typ      | Opis         |
-|---------------|----------|--------------|
-| `name`        | `string` | nazwa pokoju |
-| `description` | `string` | opis pokoju  |
+| Pole          | Typ                          | Opis                                  |
+|---------------|------------------------------|---------------------------------------|
+| `id`          | `UUID`                       | ID pokoju                             |
+| `spaceId`     | `UUID`                       | ID przestrzeni do której należy pokój |
+| `name`        | `string`                     | nazwa pokoju                          |
+| `description` | `string`                     | opis pokoju                           |
+| `topics`      | [`Topic[]`](topics.md#topic) | lista tematów w pokoju                |
 
 #### `RoomMember`
 
@@ -139,10 +133,11 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `CreateRoom`
 
-| Pole        | Typ                                       | Opis                                            |
-|-------------|-------------------------------------------|-------------------------------------------------|
-| `spaceId`   | `UUID`                                    | ID przestrzeni w której ma być utworzony pokój  |
-| `basicData` | [`RoomBasicData`](rooms.md#roombasicdata) | podstawowe informacje od przestrzeni            |
+| Pole          | Typ      | Opis                                           |
+|---------------|----------|------------------------------------------------|
+| `spaceId`     | `UUID`   | ID przestrzeni w której ma być utworzony pokój |
+| `name`        | `string` | nazwa pokoju                                   |
+| `description` | `string` | opis pokoju                                    |
 
 {payload-example CreateRoom}
 
@@ -155,10 +150,11 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `RoomSummary`
 
-| Pole        | Typ                                       | Opis                   |
-|-------------|-------------------------------------------|------------------------|
-| `id`        | `UUID`                                    | ID pokoju              |
-| `basicData` | [`RoomBasicData`](rooms.md#roombasicdata) | podstawowe dane pokoju |
+| Pole          | Typ      | Opis         |
+|---------------|----------|--------------|
+| `id`          | `UUID`   | ID pokoju    |
+| `name`        | `string` | nazwa pokoju |
+| `description` | `string` | opis pokoju  |
 
 ### Możliwe kody błędów w `Error`
 
@@ -175,7 +171,7 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 Komenda `DeleteRoom` umożliwia usunięcie pokoju. 
 
-W przypadku powodzenia, klient i wszyscy członkowie otrzymają zdarzenie `RoomDeleted`.
+W przypadku powodzenia klient i wszyscy członkowie otrzymają zdarzenie `RoomDeleted`.
 
 W przypadku błędu serwer wyśle zdarzenie `Error`.
 

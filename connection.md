@@ -116,16 +116,12 @@ Zdarzenie zawierające pełną informację o stanie sesji na moment nawiązania 
     "spaces": [
       {
         "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
-        "basicData": {
-          "name": "Hogwart"
-        },
+        "name": "Hogwart",
         "roles": [
           {
             "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
-            "basicData": {
-              "name": "Gryffindor",
-              "color": "#ff0000"
-            }
+            "name": "Gryffindor",
+            "color": "#ff0000"
           }
         ]
       }
@@ -134,16 +130,12 @@ Zdarzenie zawierające pełną informację o stanie sesji na moment nawiązania 
       {
         "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
         "spaceId": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
-        "basicData": {
-          "name": "Zamek",
-          "description": ""
-        },
+        "name": "Zamek",
+        "description": "",  
         "topics": {
           "id": "252e63a0-10cf-4856-bdcb-db2b2aadedd2",
-          "basicData": {
-            "name": "Wielka sala",
-            "description": ""
-          }
+          "name": "Wielka sala",
+          "description": ""
         }
       }
     ]

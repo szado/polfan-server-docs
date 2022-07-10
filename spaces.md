@@ -26,17 +26,11 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `Space`
 
-| Pole            | Typ                                          | Opis                                        |
-|-----------------|----------------------------------------------|---------------------------------------------|
-| `id`            | `UUID`                                       | identyfikator przestrzeni                   |
-| `basicData`     | [`SpaceBasicData`](spaces.md#spacebasicdata) | podstawowe dane przestrzeni                 |
-| `roles`         | [`Role[]`](roles.md#role)                    | tablica zdefiniowanych ról                  |
-
-#### `SpaceBasicData`
-
-| Pole   | Typ             | Opis              |
-|--------|-----------------|-------------------|
-| `name` | `string`        | nazwa przestrzeni |
+| Pole    | Typ                       | Opis                       |
+|---------|---------------------------|----------------------------|
+| `id`    | `UUID`                    | identyfikator przestrzeni  |
+| `name`  | `string`                  | nazwa przestrzeni          |
+| `roles` | [`Role[]`](roles.md#role) | tablica zdefiniowanych ról |
 
 #### `SpaceMember`
 
@@ -47,17 +41,12 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `User`
 
-| Pole            | Typ                                        | Opis                                        |
-|-----------------|--------------------------------------------|---------------------------------------------|
-| `id`            | `string`                                   | identyfikator użytkownika                   |
-| `basicData`     | [`UserBasicData`](spaces.md#userbasicdata) | podstawowe dane użytkownika                 |
-
-#### `UserBasicData`
-
-| Pole     | Typ      | Opis              |
-|----------|----------|-------------------|
-| `nick`   | `string` | nazwa użytkownika |
-| `avatar` | `string` | awatar            |
+| Pole     | Typ        | Opis                                           |
+|----------|------------|------------------------------------------------|
+| `id`     | `string`   | identyfikator użytkownika                      |
+| `nick`   | `string`   | nazwa użytkownika                              |
+| `avatar` | `string`   | avatar użytkownika                             |
+| `flags`  | `string[]` | globalne flagi użytkownika (np. `bot`, `temp`) |
 
 #### `SpaceMemberJoined`
 
@@ -181,9 +170,9 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `CreateSpace`
 
-| Pole        | Typ                                          | Opis                                                 |
-|-------------|----------------------------------------------|------------------------------------------------------|
-| `basicData` | [`SpaceBasicData`](spaces.md#spacebasicdata) | podstawowe informacje o  przestrzeni                 |
+| Pole   | Typ      | Opis              |
+|--------|----------|-------------------|
+| `name` | `string` | nazwa przestrzeni |
 
 {payload-example CreateSpace}
 
