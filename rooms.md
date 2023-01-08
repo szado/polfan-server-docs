@@ -36,9 +36,9 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `RoomMember`
 
-| Pole   | Typ                      | Opis                                                                       |
-|--------|--------------------------|----------------------------------------------------------------------------|
-| `user` | [`User`](spaces.md#user) | dane użytkownika (zobacz: [członkowie przestrzeni](spaces.md#spacemember)) |
+| Pole   | Typ                          | Opis                                                                       |
+|--------|------------------------------|----------------------------------------------------------------------------|
+| `user` | [`User`](connection.md#user) | dane użytkownika (zobacz: [członkowie przestrzeni](spaces.md#spacemember)) |
 
 #### `RoomMemberJoined`
 

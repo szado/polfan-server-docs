@@ -1,12 +1,11 @@
 - Wprowadzenie
-  - [Protokół](protocol.md)
-    - [Rodzaje wiadomości](protocol.md#rodzaje-wiadomości)
-    - [Format wiadomości](protocol.md#format-wiadomości)
   - [Połączenie](connection.md)
     - [Token dostępowy](connection.md#token-dostępowy)
     - [WebAPI](connection.md#webapi)
-    - [Webhooki](connection.md#webhooki)
     - [WebSocket](connection.md#websocket)
+  - [Protokół](protocol.md)
+    - [Rodzaje wiadomości](protocol.md#rodzaje-wiadomości)
+    - [Format wiadomości](protocol.md#format-wiadomości)
   - [Obsługa błędów](errors.md)
   
 - Zagadnienia

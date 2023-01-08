@@ -27,12 +27,12 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `Message`
 
-| Pole      | Typ                      | Opis                                      |
-|-----------|--------------------------|-------------------------------------------|
-| `id`      | `UUID`                   | id wiadomości                             |
-| `author`  | [`User`](spaces.md#user) | dane użytkownika - autora wiadomości      |
-| `topicId` | `UUID`                   | id tematu w którym opublikowano wiadomość |
-| `content` | `string`                 | treść wiadomości                          |
+| Pole      | Typ                          | Opis                                      |
+|-----------|------------------------------|-------------------------------------------|
+| `id`      | `UUID`                       | id wiadomości                             |
+| `author`  | [`User`](connection.md#user) | dane użytkownika - autora wiadomości      |
+| `topicId` | `UUID`                       | id tematu w którym opublikowano wiadomość |
+| `content` | `string`                     | treść wiadomości                          |
 
 ### Możliwe kody błędów w `Error`
 

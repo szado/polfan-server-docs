@@ -34,19 +34,10 @@ W przypadku błędu serwer wyśle zdarzenie `Error`.
 
 #### `SpaceMember`
 
-| Pole            | Typ                      | Opis                        |
-|-----------------|--------------------------|-----------------------------|
-| `user`          | [`User`](spaces.md#user) | obiekt z danymi użytkownika |
-| `roles`         | `string[]`               | tablica ID ról              |
-
-#### `User`
-
-| Pole     | Typ        | Opis                                           |
-|----------|------------|------------------------------------------------|
-| `id`     | `string`   | identyfikator użytkownika                      |
-| `nick`   | `string`   | nazwa użytkownika                              |
-| `avatar` | `string`   | avatar użytkownika                             |
-| `flags`  | `string[]` | globalne flagi użytkownika (np. `bot`, `temp`) |
+| Pole            | Typ                          | Opis                        |
+|-----------------|------------------------------|-----------------------------|
+| `user`          | [`User`](connection.md#user) | obiekt z danymi użytkownika |
+| `roles`         | `string[]`                   | tablica ID ról              |
 
 #### `SpaceMemberJoined`
 
