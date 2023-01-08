@@ -118,27 +118,33 @@ o stanie sesji na moment nawiązania połączenia. Wszelkie zdarzenia występuj�
 
 ## Token dostępowy
 
-Do nawiązania połączenia z serwerem potrzebny jest token dostępowy. Uzyskasz go, wysyłając dane logowania do usługi uwierzytelniającej metodą HTTP POST na adres:
+Do nawiązania połączenia z serwerem potrzebny jest token dostępowy. Uzyskasz go, wysyłając dane logowania do usługi uwierzytelniającej metodą POST na adres:
 
 `https://polfan.pl/webservice/auth/token` 
 
-    {
-	    "login": "login_do_konta",
-	    "password": "hasło_do_konta",
-	    "client_name": "nazwa_programu"
-    }
+```json
+{
+    "login": "login_do_konta",
+    "password": "hasło_do_konta",
+    "client_name": "nazwa_programu"
+}
+```
 
 W przypadku poprawnego uwierzytelnienia w odpowiedzi ze statusem 200 otrzymasz token:
 
-    {
-	    "token": "token_dostępowy",
-	    "expiration": "data_wygaśnięcia"
-    }
+```json
+{
+    "token": "token_dostępowy",
+    "expiration": "data_wygaśnięcia"
+}
+```
 
 W przypadku podania nieprawidłowych danych otrzymasz odpowiedź ze statusem 401 i szczegółami błędu:
 
-    {
-	    "errors": ["Invalid login or password"]
-    }
+```json
+{
+    "errors": ["Invalid login or password"]
+}
+```
 
-!> Pojedynczy token wykorzystuj, dopóki jego w nie wygaśnie lub nie zostanie usunięty. Limit aktywnych tokenów na użytkownika jest ograniczony.
+!> Pojedynczy token wykorzystuj dopóki jego ważność nie wygaśnie lub nie zostanie on usunięty. Limit aktywnych tokenów na użytkownika jest ograniczony.

@@ -13,7 +13,7 @@ W odpowiedzi na komendę serwer może zwrócić wiadomość o typie `Error`:
 {
   "meta": {
     "type": "Error",
-    "ref": null
+    "ref": "e7fa8f5a-aed7-11ec-b909-0242ac120002"
   },
   "data": {
     "code": "ProtocolException",
@@ -33,4 +33,4 @@ Błędy wymienione w poniższej tabeli mogą wystąpić niezależnie od wykonywa
 | `403`             | `AccessDeniedException`        | brak wymaganych uprawnień                                       |
 | `500`             | `UnexpectedServerException`    | błąd serwera                                                    |
 
-!> W przypadku WebAPI, wszystkie inne błędy generowane przez poszczególne komendy zwracane będą z kodem HTTP `422`.
+!> W przypadku WebAPI, wszystkie inne błędy generowane przez poszczególne komendy zwracane będą z kodem HTTP 422.
