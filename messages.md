@@ -80,7 +80,8 @@ systemów: pozwalają zaprezentować oryginalnego autora zamiast konta bota. Kon
 
 ```json
 {
-  "meta": { "type": "CreateMessage", "ref": "31" },
+  "type": "CreateMessage",
+  "ref": "31",
   "data": {
     "location": {
       "roomId": "7hK9pQ2vXnR4tY6uW1sZbA",

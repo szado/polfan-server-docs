@@ -145,7 +145,8 @@ W odpowiedzi serwer wysyła zdarzenie `ComputedPermissions`.
 
 ```json
 {
-  "meta": { "type": "GetComputedPermissions", "ref": "5" },
+  "type": "GetComputedPermissions", 
+   "ref": "5",
   "data": {
     "location": { "roomId": "7hK9pQ2vXnR4tY6uW1sZbA" }
   }
@@ -203,7 +204,8 @@ zainteresowanych klientów.
 
 ```json
 {
-  "meta": { "type": "SetPermissionOverwrites", "ref": "9" },
+  "type": "SetPermissionOverwrites",
+   "ref": "9",
   "data": {
     "location": { "roomId": "7hK9pQ2vXnR4tY6uW1sZbA" },
     "target": { "type": "Role", "roleId": "5nKwz3dEUaR7YQ8mQ1L2pF" },

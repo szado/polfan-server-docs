@@ -108,7 +108,8 @@ komendą wprowadzić do pokoju wszystkich posiadaczy danej roli.
 
 ```json
 {
-  "meta": { "type": "JoinRoom", "ref": "7" },
+  "type": "JoinRoom",
+  "ref": "7",
   "data": { "id": "7hK9pQ2vXnR4tY6uW1sZbA" }
 }
 ```

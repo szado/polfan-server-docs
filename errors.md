@@ -1,7 +1,7 @@
 # Obsługa błędów
 
 Gdy komenda nie może zostać wykonana, serwer odpowiada zdarzeniem `Error` z `ref` tej komendy. Zdarzenie zawiera
-maszynowy kod oraz komunikat pomocny przy diagnostyce.
+kod oraz komunikat pomocny przy diagnostyce.
 
 #### `Error`
 
@@ -12,7 +12,8 @@ maszynowy kod oraz komunikat pomocny przy diagnostyce.
 
 ```json
 {
-  "meta": { "type": "Error", "ref": "42" },
+  "type": "Error",
+  "ref": "42",
   "data": {
     "code": "AccessDeniedException",
     "message": "Access denied"

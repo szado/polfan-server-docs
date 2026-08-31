@@ -1,6 +1,6 @@
-# Polfan Server API
+# Devana API
 
-API Polfana daje pełny dostęp do czatu w czasie rzeczywistym: wysyłanie i odbieranie wiadomości, zarządzanie
+API Devany daje pełny dostęp do czatu w czasie rzeczywistym: wysyłanie i odbieranie wiadomości, zarządzanie
 przestrzeniami, pokojami i tematami, moderację oraz obserwowanie wszystkiego, co dzieje się na serwerze.
 
 Zbudowaliśmy je z myślą o integratorach: botach moderacyjnych, automatyzacjach, mostkach do innych systemów,
@@ -39,4 +39,4 @@ przed wdrożeniem.
 
 ---
 
-Wersja online: https://polfan.pl/v3/docs
+Wersja online: https://developers.devana.pl

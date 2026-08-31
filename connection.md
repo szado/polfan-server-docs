@@ -19,46 +19,15 @@ utrzymywanie procesu jest niewygodne (funkcje bezserwerowe, cron).
 
 ## Token dostępowy
 
-Do połączenia potrzebny jest token dostępowy. Uzyskasz go, wysyłając dane logowania do usługi uwierzytelniającej
-metodą POST na adres `https://polfan.pl/webservice/auth/token`:
-
-```json
-{
-    "login": "login_do_konta",
-    "password": "hasło_do_konta",
-    "client_name": "nazwa_programu"
-}
-```
-
-Odpowiedź 200:
-
-```json
-{
-    "token": "token_dostępowy",
-    "expiration": "data_wygaśnięcia"
-}
-```
-
-Odpowiedź 401 przy nieprawidłowych danych:
-
-```json
-{
-    "errors": ["Invalid login or password"]
-}
-```
-
-`client_name` trafia do listy sesji użytkownika – podaj rozpoznawalną nazwę swojej integracji.
-
-!> Token wykorzystuj do momentu wygaśnięcia lub usunięcia. Liczba aktywnych tokenów na użytkownika jest ograniczona,
-więc generowanie nowego przy każdym uruchomieniu procesu doprowadzi do wyczerpania limitu. Przechowuj token poza
-repozytorium kodu.
+Do połączenia potrzebny jest token dostępowy. Uzyskasz go w [aplikacji Devany](https://devana.pl/chat) po wejściu
+w ustawienia konta i zakładkę "Dla deweloperów".
 
 ## WebSocket
 
 Adres połączenia:
 
 ```
-wss://s2.polfan.pl/ws?token=token_dostępowy
+wss://s1.devana.pl:1600/ws?token=token_dostępowy
 ```
 
 ### Parametry połączenia
@@ -66,9 +35,6 @@ wss://s2.polfan.pl/ws?token=token_dostępowy
 | Parametr | Wymagany | Opis                                                                                              |
 |----------|----------|---------------------------------------------------------------------------------------------------|
 | `token`  | tak      | [token dostępowy](connection.md#token-dostępowy)                                                  |
-| `p`      | nie      | platforma klienta: `web`, `ios`, `android`, `desktop`; zapisywana w [danych sesji](users.md#dane-sesji) |
-| `ci`     | nie      | stały identyfikator instalacji klienta                                                            |
-| `icts`   | nie      | tokeny powiązania tożsamości (do 10, po przecinku) – patrz [tożsamość](connection.md#tożsamość)   |
 
 Komunikacja binarna nie jest wspierana – wysłanie ramki binarnej kończy się rozłączeniem ze zdarzeniem
 [`Bye`](connection.md#bye).
@@ -86,7 +52,6 @@ kolejne zdarzenia modyfikują ten stan.
 | `protoVersion`  | `string`                                | wersja protokołu (semver)                               |
 | `state`         | [`UserState`](connection.md#userstate)  | przestrzenie i pokoje, w których jest użytkownik        |
 | `user`          | [`User`](users.md#user)                 | zalogowany użytkownik                                   |
-| `ict`           | `UUID`&#124;`null`                      | [token powiązania tożsamości](connection.md#tożsamość)  |
 
 #### `UserState`
 
@@ -102,7 +67,8 @@ warto wywołać samodzielnie po stronie WebAPI, aby poznać stan konta.
 
 ```json
 {
-  "meta": { "type": "Session", "ref": null },
+  "type": "Session", 
+  "ref": null,
   "data": {
     "serverVersion": "PolfanServer/1.4.0",
     "protoVersion": "0.2.0",
@@ -206,19 +172,12 @@ Ten sam obiekt opisuje też opuszczenie [pokoju](rooms.md#wyjście-z-pokoju) i [
 | `Service`    | restart, konserwacja, zamknięcie węzła                       | połącz ponownie z backoffem               |
 | `Error`      | błąd protokołu lub uwierzytelniania                          | napraw klienta; przy `AuthenticationException` odśwież token |
 
-### Tożsamość
-
-Pole `ict` w zdarzeniu `Session` to token pozwalający serwerowi rozpoznać, że kilka kont należy do tej samej osoby.
-Klient może zapamiętać otrzymane tokeny i podać je przy kolejnych połączeniach w parametrze `icts` (po przecinku,
-maksymalnie 10). Mechanizm służy egzekwowaniu banów i jest opcjonalny – integracja obsługująca jedno konto może go
-zignorować.
-
 ## WebAPI
 
 Wszystkie żądania wysyłaj metodą **POST** na adres:
 
 ```
-https://s2.polfan.pl/api
+https://s1.devana.pl:1600/api
 ```
 
 W ciele żądania umieść pojedynczą [kopertę komendy](protocol.md#format-wiadomości). Każde żądanie podpisz nagłówkiem:
@@ -233,8 +192,6 @@ W odpowiedzi otrzymasz kopertę zdarzenia zwrotnego ze statusem HTTP 200 albo
 Ograniczenia wynikające z modelu żądanie–odpowiedź:
 
 * zwracane jest **tylko** zdarzenie skierowane do nadawcy; zdarzeń rozgłoszeniowych nie zobaczysz;
-* komendy, których odpowiedź jest dostarczana asynchronicznie (`React`, `Ack`, `FollowTopic`, `CreateRoom`),
-  nie mają czym wypełnić odpowiedzi – używaj ich przez WebSocket;
 * obecność użytkownika nie zmienia się na `Online`.
 
 ## Limity
@@ -246,4 +203,4 @@ po [`ref`](protocol.md#identyfikator-referencyjny-ref).
 Praktyczne konsekwencje dla bota masowo modyfikującego stan (np. nadającego role setkom osób):
 
 * wysyłaj komendy partiami i czekaj na potwierdzenia, zamiast zalewać połączenie;
-* nie zakładaj, że komenda wysłana wcześniej wykona się wcześniej – jeśli operacje są zależne, serializuj je sam.
+* nie zakładaj, że komenda wysłana wcześniej wykona się wcześniej.

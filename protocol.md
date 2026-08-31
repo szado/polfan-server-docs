@@ -29,10 +29,8 @@ Wiadomości przesyłane są w formacie JSON i mają zawsze tę samą kopertę:
 
 ```
 {
-    "meta": {
-        "type": <string>,   // nazwa komendy lub zdarzenia
-        "ref": <string|null>
-    },
+    "type": <string>,   // nazwa komendy lub zdarzenia
+    "ref": <string|null>,
     "data": {
         // pola zależne od typu wiadomości
     }
@@ -70,7 +68,7 @@ Z UUID v7 wynikają dwie praktyczne własności:
 * **są posortowane chronologicznie** – porównanie ID wiadomości mówi, która powstała wcześniej;
 * **niosą znacznik czasu utworzenia** – możesz go odczytać bez odpytywania serwera.
 
-Identyfikator użytkownika (`User.id`) to numeryczny ciąg znaków, nie UUID.
+!> Identyfikator użytkownika (`User.id`) to numeryczny ciąg znaków, nie UUID.
 
 ## Lokalizacja: `ChatLocation`
 
@@ -127,31 +125,8 @@ To rozróżnienie jest istotne: `{"id": "...", "description": null}` czyści opi
 Komendy, które nie zwracają danych (np. `Ban`, `Kick`, `SetUserData`), potwierdzają wykonanie pustym zdarzeniem `Ok`:
 
 ```json
-{ "meta": { "type": "Ok", "ref": "42" }, "data": {} }
+{ "type": "Ok", "ref": "42", "data": {} }
 ```
 
 Brak `Ok` i brak `Error` przy danym `ref` oznacza, że odpowiedź dotrze jako właściwe zdarzenie stanu – tak działają
 m.in. `React`, `Ack`, `FollowTopic` i `CreateRoom`.
-
-## Komendy pomocnicze
-
-Poza komendami domenowymi serwer udostępnia kilka narzędzi ogólnego przeznaczenia. Są one dostarczane przez
-opcjonalne moduły – jeśli operator ich nie włączył, wysłanie komendy zwróci `ProtocolException`.
-
-| Komenda        | Zdarzenie zwrotne | Zastosowanie                                                                 |
-|----------------|-------------------|------------------------------------------------------------------------------|
-| `Ping`         | `Pong`            | [utrzymanie połączenia](connection.md#utrzymanie-połączenia); brak pól       |
-| `GetDebug`     | `Debug`           | metryki węzła serwera: obciążenie, pule połączeń, statystyki komend           |
-| `ProxyRequest` | `ProxiedResponse` | pobranie zasobu HTTP przez serwer – obejście ograniczeń CORS w kliencie webowym |
-
-### `ProxyRequest`
-
-| Pole  | Typ      | Opis                     |
-|-------|----------|--------------------------|
-| `url` | `string` | adres do pobrania        |
-
-Odpowiedź `ProxiedResponse` zawiera pole `response` z treścią. Ograniczenia proxy: wyłącznie metoda GET, limit
-czasu 1 s, maksymalnie 5 000 bajtów odpowiedzi (nadmiar jest obcinany), wynik cache'owany przez 10 s. Niepowodzenie
-zwraca `ProxiedRequestException`.
-
-Narzędzie powstało dla klientów przeglądarkowych; bot serwerowy powinien wykonywać żądania HTTP samodzielnie.

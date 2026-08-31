@@ -58,7 +58,7 @@ Skrócony opis przestrzeni, zwracany tam, gdzie użytkownik nie jest jej członk
 
 ## Katalog przestrzeni publicznych
 
-Zanim bot dołączy do przestrzeni, musi poznać jej identyfikator. Komenda `GetDiscoverableSpaces` (bez pól) zwraca
+Komenda `GetDiscoverableSpaces` (bez pól) zwraca
 listę przestrzeni zgłoszonych i zaakceptowanych do katalogu publicznego.
 
 W odpowiedzi serwer wysyła `DiscoverableSpaces`.
@@ -111,7 +111,8 @@ Nadawca otrzymuje `SpaceJoined`, a pozostali członkowie – `SpaceMemberJoined`
 
 ```json
 {
-  "meta": { "type": "JoinSpace", "ref": "1" },
+  "type": "JoinSpace",
+  "ref": "1",
   "data": { "id": "3dEUaR7YQ8mQ1L2pF5nKwz" }
 }
 ```

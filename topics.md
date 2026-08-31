@@ -45,7 +45,8 @@ Członkowie pokoju otrzymują `NewTopic`.
 
 ```json
 {
-  "meta": { "type": "CreateTopic", "ref": "12" },
+  "type": "CreateTopic", 
+  "ref": "12",
   "data": {
     "location": { "roomId": "7hK9pQ2vXnR4tY6uW1sZbA" },
     "name": "Zgłoszenie #4213",
