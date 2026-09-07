@@ -20,6 +20,14 @@ publikowanie, pobieranie historii, wzmianki, [reakcje i ankiety](messages.md#rea
 | `attachments` | `UUID[]`&#124;`null`                                   | [ID plików](files.md#załączniki-w-wiadomościach)                 |
 | `reactions`   | [`MessageReaction[]`](messages.md#messagereaction)     | zagregowane liczniki reakcji                                     |
 | `poll`        | [`MessagePoll`](messages.md#messagepoll)&#124;`null`   | definicja ankiety, jeśli wiadomość jest ankietą                  |
+| `mentions`    | [`MessageMentions`](messages.md#messagementions)&#124;`null` | skuteczne cele [wzmianek](messages.md#wzmianki); `null` gdy brak |
+
+#### `MessageMentions`
+
+| Pole      | Typ        | Opis                                     |
+|-----------|------------|------------------------------------------|
+| `userIds` | `string[]` | ID wzmiankowanych użytkowników           |
+| `roleIds` | `UUID[]`   | ID wzmiankowanych ról                    |
 
 #### `MessageAuthor`
 
@@ -133,6 +141,11 @@ Wzmianka roli działa tylko wtedy, gdy rola ma flagę
 [`MentionableByEveryone`](roles.md#flagi-roli) albo autor wiadomości ma uprawnienie
 [`MentionAllRoles`](permissions.md#lista-uprawnień). W przeciwnym razie wzmianka zostaje w treści (klient może ją
 wyróżnić), ale nie jest zapisywana jako cel – nie zwiększa `mentionCount` i nie wysyła powiadomienia push.
+
+Rozstrzygnięcia nie da się odtworzyć z samej treści, dlatego każda wiadomość niesie pole `mentions` z celami,
+które faktycznie zostały trafione. To ten sam zbiór, o którym serwer powiadamia – klient nie musi parsować treści
+ani znać uprawnień autora. Cele spoza kontekstu wiadomości (użytkownik spoza pokoju, rola spoza przestrzeni) są
+przy zapisie pomijane.
 
 Ciąg, który nie jest poprawnym identyfikatorem, pozostaje zwykłym tekstem. Bot budujący treść powinien wstawiać
 identyfikatory, nie pseudonimy – pseudonim zmienia się, identyfikator nie.
