@@ -39,7 +39,9 @@ Dla bota automatyzacyjnego role są też mechanizmem adresowania grup – jedną
 | `SeparateOnMembersList` | `1 << 0` | 1       | dostępni posiadacze roli tworzą własną grupę na liście użytkowników (kolejność wg priorytetów) |
 | `MentionableByEveryone` | `1 << 1` | 2       | każdy może [wzmiankować](messages.md#wzmianki) rolę ze skutkiem powiadomienia                  |
 
-`SeparateOnMembersList` jest wskazówką prezentacyjną – serwer nie zmienia z jej powodu żadnych danych.
+`SeparateOnMembersList` jest wskazówką prezentacyjną – serwer nie zmienia z jej powodu żadnych danych. Nie można
+jej ustawić [roli domyślnej](roles.md#rola-domyślna-everyone) (`DefaultRoleException`): posiadają ją wszyscy, więc
+jej grupa byłaby całą listą.
 
 `MentionableByEveryone` egzekwowane jest po stronie serwera przy tworzeniu wiadomości. Bez tej flagi wzmianka
 roli zostaje w treści, ale nie zapisuje celu wzmianki – chyba że autor ma uprawnienie
@@ -60,7 +62,8 @@ Wraz z przestrzenią powstaje rola domyślna, którą otrzymuje **każdy** jej c
   przestrzeni byłoby zbyt kosztowne;
 * przy [wzmiankach](messages.md#wzmianki) obejmuje każdego członka przestrzeni – domyślnie bez flagi
   `MentionableByEveryone`, więc wzmiankować ją ze skutkiem powiadomienia mogą tylko posiadacze uprawnienia
-  `MentionAllRoles`.
+  `MentionAllRoles`;
+* nie przyjmuje flagi `SeparateOnMembersList`.
 
 Operacje naruszające te zasady kończą się błędem `DefaultRoleException`.
 
@@ -134,7 +137,7 @@ Wszyscy członkowie przestrzeni otrzymują `RoleUpdated`.
 |-----------------------------------|---------------------------------------------------------|
 | `AccessDeniedException`           | brak uprawnienia `ManageRoles`                          |
 | `RoleNotFoundException`           | rola nie istnieje                                       |
-| `DefaultRoleException`            | próba zmiany priorytetu roli domyślnej                  |
+| `DefaultRoleException`            | próba zmiany priorytetu roli domyślnej lub nadania jej flagi `SeparateOnMembersList` |
 | `RolePriorityOutOfRangeException` | priorytet poza dozwolonym zakresem                      |
 
 ## Usuwanie roli
