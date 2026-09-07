@@ -56,6 +56,7 @@
 
 - Dostęp i moderacja
   - [Role](roles.md)
+    - [Flagi roli](roles.md#flagi-roli)
     - [Rola domyślna](roles.md#rola-domyślna-everyone)
     - [Tworzenie roli](roles.md#tworzenie-roli)
     - [Edycja roli](roles.md#edycja-roli)

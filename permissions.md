@@ -39,6 +39,7 @@ i można je zdefiniować. Próba zdefiniowania go głębiej kończy się błęde
 | `AddMembers`           | `1 << 20`| 1048576   | `Space`       | [dodawanie innych do pokojów](rooms.md#wejście-do-pokoju)      |
 | `React`                | `1 << 21`| 2097152   | `Topic`       | [reagowanie na wiadomości](messages.md#reakcje)                |
 | `CreatePolls`          | `1 << 22`| 4194304   | `Topic`       | [tworzenie ankiet](messages.md#ankiety)                        |
+| `MentionAllRoles`      | `1 << 23`| 8388608   | `Topic`       | [wzmiankowanie każdej roli](messages.md#wzmianki), niezależnie od jej flag |
 
 Bit `1 << 4` jest zarezerwowany i nieużywany.
 

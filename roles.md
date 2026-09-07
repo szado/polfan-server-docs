@@ -17,6 +17,7 @@ Dla bota automatyzacyjnego role są też mechanizmem adresowania grup – jedną
 * Przypisanie pokojowe jest niemożliwe w pokojach prywatnych (poza przestrzenią).
 * **Priorytet** rozstrzyga, którą rolę pokazać przy pseudonimie (kolor) – wyższa wartość wygrywa. Przy
   [obliczaniu uprawnień](permissions.md#obliczanie-uprawnień) priorytet nie ma znaczenia.
+* **Flagi** (`flags`) włączają dodatkowe zachowania roli – patrz [flagi roli](roles.md#flagi-roli).
 
 #### `Role`
 
@@ -26,6 +27,26 @@ Dla bota automatyzacyjnego role są też mechanizmem adresowania grup – jedną
 | `priority` | `int`                | priorytet; `0` zarezerwowane dla roli domyślnej |
 | `name`     | `string`             | nazwa (1–50 znaków)                             |
 | `color`    | `string`&#124;`null` | kolor w formacie HEX (np. `#ff0000`)            |
+| `flags`    | `int`                | [flagi roli](roles.md#flagi-roli) (maska bitowa) |
+
+## Flagi roli
+
+`flags` to maska bitowa włączająca dodatkowe zachowania roli. Ustawienie bitu spoza listy kończy się błędem
+`ValueObjectException`.
+
+| Flaga                   | Bit      | Wartość | Znaczenie                                                                                     |
+|-------------------------|----------|---------|-----------------------------------------------------------------------------------------------|
+| `SeparateOnMembersList` | `1 << 0` | 1       | dostępni posiadacze roli tworzą własną grupę na liście użytkowników (kolejność wg priorytetów) |
+| `MentionableByEveryone` | `1 << 1` | 2       | każdy może [wzmiankować](messages.md#wzmianki) rolę ze skutkiem powiadomienia                  |
+
+`SeparateOnMembersList` jest wskazówką prezentacyjną – serwer nie zmienia z jej powodu żadnych danych.
+
+`MentionableByEveryone` egzekwowane jest po stronie serwera przy tworzeniu wiadomości. Bez tej flagi wzmianka
+roli zostaje w treści, ale nie zapisuje celu wzmianki – chyba że autor ma uprawnienie
+[`MentionAllRoles`](permissions.md#lista-uprawnień), które nadpisuje flagę każdej roli.
+
+Nowe role tworzone są z flagą `MentionableByEveryone`, o ile komenda nie poda `flags` wprost. Rola domyślna
+przestrzeni powstaje bez żadnej flagi.
 
 ## Rola domyślna (`@everyone`)
 
@@ -36,7 +57,10 @@ Wraz z przestrzenią powstaje rola domyślna, którą otrzymuje **każdy** jej c
 * na warstwie przestrzeni definiuje wartości **wszystkich** uprawnień, przez co stanowi punkt odniesienia dla
   całej przestrzeni – patrz [uprawnienia](permissions.md#rola-domyślna-a-uprawnienia);
 * nie jest wspierana tam, gdzie komenda operuje na wybranych rolach (`JoinRoom`, `Invite`) – rozwinięcie całej
-  przestrzeni byłoby zbyt kosztowne.
+  przestrzeni byłoby zbyt kosztowne;
+* przy [wzmiankach](messages.md#wzmianki) obejmuje każdego członka przestrzeni – domyślnie bez flagi
+  `MentionableByEveryone`, więc wzmiankować ją ze skutkiem powiadomienia mogą tylko posiadacze uprawnienia
+  `MentionAllRoles`.
 
 Operacje naruszające te zasady kończą się błędem `DefaultRoleException`.
 
@@ -56,6 +80,7 @@ Wszyscy członkowie przestrzeni otrzymują `NewRole`.
 | `spaceId` | `UUID`               | identyfikator przestrzeni                |
 | `name`    | `string`             | nazwa roli (1–50 znaków)                 |
 | `color`   | `string`&#124;`null` | kolor w formacie HEX                     |
+| `flags`   | `int`&#124;`null`    | [flagi roli](roles.md#flagi-roli); domyślnie `MentionableByEveryone` |
 
 #### `NewRole`
 
@@ -92,6 +117,7 @@ Wszyscy członkowie przestrzeni otrzymują `RoleUpdated`.
 | `priority` | `int`&#124;`null`    | nowy priorytet (od `1` w górę)                  |
 | `name`     | `string`&#124;`null` | nowa nazwa                                      |
 | `color`    | `string`&#124;`null` | nowy kolor; `null` usuwa kolor                  |
+| `flags`    | `int`&#124;`null`    | nowa maska [flag roli](roles.md#flagi-roli)     |
 
 #### `RoleUpdated`
 

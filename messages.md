@@ -126,7 +126,13 @@ Wzmianki osadzane są bezpośrednio w treści:
 
 Serwer parsuje wzmianki wyłącznie w wiadomościach typu `Text` i `Poll`, do 50 celów na wiadomość. Wzmianka
 powoduje automatyczne [obserwowanie tematu](topics.md#obserwowanie-tematów) przez wskazanych użytkowników oraz
-zwiększenie ich licznika `mentionCount`.
+zwiększenie ich licznika `mentionCount`. Wzmianka roli domyślnej (`@everyone`) obejmuje wszystkich członków
+przestrzeni – nie wymaga ona przypisań.
+
+Wzmianka roli działa tylko wtedy, gdy rola ma flagę
+[`MentionableByEveryone`](roles.md#flagi-roli) albo autor wiadomości ma uprawnienie
+[`MentionAllRoles`](permissions.md#lista-uprawnień). W przeciwnym razie wzmianka zostaje w treści (klient może ją
+wyróżnić), ale nie jest zapisywana jako cel – nie zwiększa `mentionCount` i nie wysyła powiadomienia push.
 
 Ciąg, który nie jest poprawnym identyfikatorem, pozostaje zwykłym tekstem. Bot budujący treść powinien wstawiać
 identyfikatory, nie pseudonimy – pseudonim zmienia się, identyfikator nie.
