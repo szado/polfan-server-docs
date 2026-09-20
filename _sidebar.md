@@ -83,3 +83,7 @@
     - [Dane sesji](users.md#dane-sesji)
     - [Dane klienta](users.md#dane-klienta)
     - [Relacje](users.md#relacje)
+  - [Pakiety i uprawnienia](billing.md)
+    - [Pobieranie uprawnień](billing.md#pobieranie-uprawnień)
+    - [Tiket dostępu do billingu](billing.md#tiket-dostępu-do-billingu)
+    - [Zmiana pakietu](billing.md#zmiana-pakietu)

@@ -15,7 +15,8 @@ narzędziach analitycznych i alternatywnych klientach czatu. Jeden protokół JS
 
 Dalej dokumentacja podzielona jest wg zagadnień: [przestrzenie](spaces.md), [pokoje](rooms.md),
 [tematy](topics.md), [wiadomości](messages.md), [role](roles.md), [uprawnienia](permissions.md),
-[użytkownicy](users.md), [moderacja](moderation.md), [emotikony](emoticons.md) i [pliki](files.md).
+[użytkownicy](users.md), [pakiety i uprawnienia pakietowe](billing.md), [moderacja](moderation.md),
+[emotikony](emoticons.md) i [pliki](files.md).
 
 ## Model danych w skrócie
 
