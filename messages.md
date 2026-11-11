@@ -218,7 +218,7 @@ Zagregowany licznik, dołączany do każdej wiadomości.
 | Pole    | Typ                             | Opis                          |
 |---------|---------------------------------|-------------------------------|
 | `type`  | `"Emoji"`&#124;`"Emoticon"`     | rodzaj reakcji                |
-| `value` | `string`                        | emoji lub ID emotikony (do 64 znaków) |
+| `value` | `string`                        | jedno emoji lub ID emotikony (do 64 znaków) |
 | `count` | `int`                           | liczba głosów                 |
 
 #### `UserReaction`
@@ -233,7 +233,7 @@ Dodaje lub usuwa reakcję bieżącego użytkownika.
 |-------------|-----------------------------|--------------------------|
 | `messageId` | `UUID`                      | identyfikator wiadomości |
 | `type`      | `"Emoji"`&#124;`"Emoticon"` | rodzaj reakcji           |
-| `value`     | `string`                    | emoji lub ID emotikony   |
+| `value`     | `string`                    | jedno emoji lub ID emotikony; cokolwiek innego jako `Emoji` kończy się `ValueObjectException` |
 
 Reagowanie na zwykłą wiadomość wymaga uprawnienia `React`. Głosowanie w ankiecie jest otwarte dla każdego, kto
 ją widzi – bramkowane jest **utworzenie** ankiety (`CreatePolls`), nie udział w niej.

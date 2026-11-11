@@ -26,6 +26,20 @@ Dla bota automatyzacyjnego role są też mechanizmem adresowania grup – jedną
 | `priority` | `int`                | priorytet; `0` zarezerwowane dla roli domyślnej |
 | `name`     | `string`             | nazwa (1–50 znaków)                             |
 | `color`    | `string`&#124;`null` | kolor w formacie HEX (np. `#ff0000`)            |
+| `icon`     | [`RoleIcon`](#roleicon)&#124;`null` | ikona roli                       |
+
+Kolor i ikona przy pseudonimie wybierane są tak samo: każde z nich pochodzi z roli o najwyższym priorytecie spośród
+posiadanych, która je ma – mogą więc pochodzić z różnych ról.
+
+#### `RoleIcon`
+
+Ten sam kształt co [reakcja](messages.md#userreaction): jedno emoji albo emotikona przestrzeni, do której należy
+rola. Usunięcie emotikony usuwa ją z ikon ról bez osobnego zdarzenia – klient nie powinien wtedy pokazywać ikony.
+
+| Pole    | Typ                         | Opis                                     |
+|---------|-----------------------------|------------------------------------------|
+| `type`  | `"Emoji"`&#124;`"Emoticon"` | rodzaj ikony                             |
+| `value` | `string`                    | jedno emoji lub ID emotikony             |
 
 ## Rola domyślna (`@everyone`)
 
@@ -76,7 +90,7 @@ Wszyscy członkowie przestrzeni otrzymują `NewRole`.
 
 ## Edycja roli
 
-`UpdateRole` zmienia nazwę, kolor lub priorytet roli, zgodnie z
+`UpdateRole` zmienia nazwę, kolor, ikonę lub priorytet roli, zgodnie z
 [semantyką aktualizacji częściowej](protocol.md#semantyka-pól-w-komendach-updatex).
 
 Wymaga uprawnienia `ManageRoles`.
@@ -92,6 +106,7 @@ Wszyscy członkowie przestrzeni otrzymują `RoleUpdated`.
 | `priority` | `int`&#124;`null`    | nowy priorytet (od `1` w górę)                  |
 | `name`     | `string`&#124;`null` | nowa nazwa                                      |
 | `color`    | `string`&#124;`null` | nowy kolor; `null` usuwa kolor                  |
+| `icon`     | [`RoleIcon`](#roleicon)&#124;`null` | nowa ikona; `null` usuwa ikonę   |
 
 #### `RoleUpdated`
 
@@ -110,6 +125,8 @@ Wszyscy członkowie przestrzeni otrzymują `RoleUpdated`.
 | `RoleNotFoundException`           | rola nie istnieje                                       |
 | `DefaultRoleException`            | próba zmiany priorytetu roli domyślnej                  |
 | `RolePriorityOutOfRangeException` | priorytet poza dozwolonym zakresem                      |
+| `EmoticonNotFoundException`       | emotikona ikony nie istnieje lub jest z innej przestrzeni |
+| `ValueObjectException`            | wartość ikony to nie jedno emoji ani ID emotikony       |
 
 ## Usuwanie roli
 
